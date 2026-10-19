@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Project Guidelines
+
+- Write all code comments in both English and Korean.
+- Keep changes scoped to the requested task. Do not modify unrelated code.
+- Before modifying code, explain what you intend to change and why, then wait for the user's confirmation.
+- Follow a functional programming style. Prefer pure functions and immutable data, and keep side effects explicit.

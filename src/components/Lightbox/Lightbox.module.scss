@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+
+// Lock page scroll while the lightbox is open (no JS needed)
+// 라이트박스가 열려 있는 동안 페이지 스크롤 잠금 (JS 불필요)
+:global(html):has(.dialog[open]) {
+  overflow: hidden;
+}
+
+.dialog {
+  // Reset the browser's default <dialog> box to full screen
+  // 브라우저 기본 dialog 박스를 전체 화면으로 초기화
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  // Page shows through, blurred (fades together with opacity)
+  // 뒤 페이지가 흐리게 비침 (opacity와 함께 페이드됨)
+  background: transparent;
+  backdrop-filter: blur(10px);
+
+  // The dialog itself does the blur / 흐림 효과는 dialog 자체가 담당
+  &::backdrop {
+    background: transparent;
+  }
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+// Fit inside the viewport, keeping the ratio / 비율을 유지하며 화면 안에 맞춤
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100dvh;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px;
+  color: $text-disabled;
+  backdrop-filter: blur(10px);
+  transition: color 0.1s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: $text-muted;
+  }
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+  }
+}

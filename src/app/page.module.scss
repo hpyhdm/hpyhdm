@@ -6,6 +6,9 @@ $grid-count: 4;
 .main {
   width: 100%;
   height: 100vh;
+  // Moved from .grid so the highlight can sit between the background and the cells
+  // 하이라이트가 배경과 셀 사이에 올 수 있도록 .grid에서 옮겨 옴
+  background: $bg-muted;
 
   @include media(false, tablet) {
     height: auto;
@@ -18,7 +21,6 @@ $grid-count: 4;
   grid-template-rows: repeat($grid-count, 1fr);
   width: 100%;
   height: 100%;
-  background: $bg-muted;
 
   a:hover {
     text-decoration: unset;
@@ -34,12 +36,18 @@ $grid-count: 4;
   border-right: 1px solid $border-default;
   border-bottom: 1px solid $border-default;
 
+  &[data-hover] {
+    background: $bg-cell;
+  }
+
+  // Count .cell only, so the highlight span is ignored
+  // 하이라이트 span은 빼고 .cell만 셈
   @include media($from: tablet) {
-    &:nth-child(#{$grid-count}n) {
+    &:nth-child(#{$grid-count}n of .cell) {
       border-right: 0;
     }
 
-    &:nth-last-child(-n + #{$grid-count}) {
+    &:nth-last-child(-n + #{$grid-count} of .cell) {
       border-bottom: 0;
     }
   }

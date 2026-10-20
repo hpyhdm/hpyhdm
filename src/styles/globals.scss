@@ -13,4 +13,5 @@
 // 기본 body 폰트: SUIT, 로드 실패 시 시스템 폰트로 대체
 body {
   font-family: var(--font-sans);
+  font-size: 0.875rem; // 14px at browser default / 브라우저 기본 설정 기준 14px
 }

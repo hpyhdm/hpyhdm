@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+// Positioning context for the highlight (getCellBox measures from here)
+// 하이라이트의 기준 영역 (getCellBox가 여기를 기준으로 측정)
+.board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// Keep the cells' content above the highlight
+// 셀 내용이 하이라이트보다 위에 오도록
+.grid {
+  position: relative;
+  z-index: 1;
+}
+
+// Frame: cell-sized box that clips the fill (size/position set by JS)
+// 틀: fill을 잘라내는 셀 크기 박스 (크기/위치는 JS가 지정)
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; // hidden until the first hover / 첫 hover 전까지 숨김
+  pointer-events: none;
+
+  // Not used on touch devices or the one-column layout
+  // 터치 기기와 1열 레이아웃에서는 사용하지 않음
+  @media (hover: none) {
+    display: none;
+  }
+
+  @include media(false, tablet) {
+    display: none;
+  }
+}
+
+// Fill: the visible color that slides in/out
+// fill: 실제로 보이는 색, 안팎으로 슬라이드
+.highlightFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $bg-hover;
+}

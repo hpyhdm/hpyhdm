@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <main>
       <section>
-
+        resume
       </section>
     </main>
   );

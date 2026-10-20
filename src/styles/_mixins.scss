@@ -8,8 +8,15 @@ $breakpoints: (
 
 // $from: min-width (이상), $until: max-width (미만)
 @mixin media($from: false, $until: false) {
-  $min: if($from, map.get($breakpoints, $from), null);
-  $max: if($until, map.get($breakpoints, $until) - 0.02px, null);
+  $min: null;
+  $max: null;
+
+  @if $from {
+    $min: map.get($breakpoints, $from);
+  }
+  @if $until {
+    $max: map.get($breakpoints, $until) - 0.02px;
+  }
 
   @if $min and $max {
     @media (min-width: $min) and (max-width: $max) {

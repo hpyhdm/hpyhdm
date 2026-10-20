@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.button {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  text-align: left;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  // Same color as the cell, so it stays hidden until hover
+  // 셀 배경과 같은 색이라 hover 전까지는 보이지 않음
+  color: $bg-muted;
+  transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  // Only on devices that can really hover (not touch)
+  // 실제로 hover가 가능한 기기에서만 (터치 기기 제외)
+  @media (hover: hover) {
+    .button:hover & {
+      color: $text-disabled;
+    }
+  }
+
+  // Keyboard users see it too / 키보드로 이동했을 때도 보이도록
+  .button:focus-visible & {
+    color: $text-disabled;
+  }
+
+  // One-column layout: a visible list row, year on the right
+  // 1열 레이아웃: 항상 보이는 목록 한 줄, 연도는 오른쪽
+  @include media(false, tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3px 6px;
+    color: $text-default;
+  }
+}
+
+.year {
+  @include media(false, tablet) {
+    order: 2;
+  }
+}
+
+.title {
+  display: flex;
+  gap: 3px;
+}

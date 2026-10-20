@@ -1,0 +1,117 @@
+// Modern CSS reset
+// 모던 CSS 리셋
+
+// 1. Use a more intuitive box-sizing model
+// 1. 더 직관적인 box-sizing 모델 사용 (padding/border를 width에 포함)
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Remove default margin and padding
+// 2. 브라우저 기본 margin, padding 제거
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Prevent font size inflation on mobile (iOS landscape, etc.)
+// 3. 모바일(iOS 가로 모드 등)에서 글자 크기가 자동으로 커지는 것 방지
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+// 4. Base body styles: full height, readable line-height, smoother text
+// 4. body 기본값: 최소 전체 높이, 읽기 좋은 줄간격, 부드러운 글자 렌더링
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// 5. Media elements behave like blocks and never overflow their container
+// 5. 이미지·영상 등은 블록처럼 동작하고 부모 영역을 넘치지 않도록
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// 6. Form elements inherit typography from their parent
+// 6. 폼 요소는 부모의 글꼴 스타일을 상속 (기본값은 브라우저 시스템 폰트)
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+// 7. Reset button appearance so it can be styled freely
+// 7. 버튼 기본 모양을 지워 자유롭게 스타일링할 수 있도록
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// 8. Avoid text overflow for long words or URLs
+// 8. 긴 단어나 URL이 영역을 넘치지 않도록 줄바꿈 허용
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// 9. Balanced line breaks for headings, fewer orphans in paragraphs
+// 9. 제목은 줄 길이를 균형 있게, 본문은 마지막 줄에 한 단어만 남는 현상 줄이기
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+// 10. Remove list bullets (use role="list" on semantic lists for Safari VoiceOver)
+// 10. 리스트 기본 불릿 제거 (Safari VoiceOver를 위해 의미 있는 리스트에는 role="list" 사용)
+ul,
+ol {
+  list-style: none;
+}
+
+// 11. Links inherit color and have no underline by default
+// 11. 링크는 부모 색을 상속하고 기본 밑줄 제거
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// 12. Respect users who prefer reduced motion (CSS only; handle GSAP separately)
+// 12. '동작 줄이기' 설정 사용자를 위해 애니메이션·전환 최소화 (CSS만 해당, GSAP은 별도 처리)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

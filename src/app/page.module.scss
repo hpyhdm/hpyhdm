@@ -1,0 +1,51 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+$grid-count: 4;
+
+.main {
+  width: 100%;
+  height: 100vh;
+
+  @include media(false, tablet) {
+    height: auto;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-count, 1fr);
+  grid-template-rows: repeat($grid-count, 1fr);
+  width: 100%;
+  height: 100%;
+  background: $bg-muted;
+
+  a:hover {
+    text-decoration: unset;
+  }
+
+  @include media(false, tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+}
+
+.cell {
+  border-right: 1px solid $border-default;
+  border-bottom: 1px solid $border-default;
+
+  @include media($from: tablet) {
+    &:nth-child(#{$grid-count}n) {
+      border-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$grid-count}) {
+      border-bottom: 0;
+    }
+  }
+
+  @include media(false, tablet) {
+    border-right: 0;
+    border-bottom: 1px solid $border-strong;
+  }
+}

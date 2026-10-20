@@ -1,3 +1,7 @@
+// Load the reset first so global styles below can override it
+// 리셋을 가장 먼저 불러와서, 아래 전역 스타일이 리셋을 덮어쓸 수 있도록
+@use 'reset';
+
 :root {
   --font-system: system-ui, -apple-system, BlinkMacSystemFont,
   'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic',
@@ -5,3 +9,8 @@
   --font-sans: var(--font-suit), var(--font-system);
 }
 
+// Default body font: SUIT, falling back to system fonts
+// 기본 body 폰트: SUIT, 로드 실패 시 시스템 폰트로 대체
+body {
+  font-family: var(--font-sans);
+}

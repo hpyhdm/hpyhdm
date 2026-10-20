@@ -1,0 +1,50 @@
+// =====================
+// Palette
+// 실제 색 값은 여기에만 씁니다
+// =====================
+$white: #ffffff;
+
+$gray-100: #fafafa;
+$gray-200: #e5e5e5;
+$gray-400: #a3a3a3;
+$gray-500: #737373;
+$gray-900: #101010;
+
+$blue-400: #75a1dc;
+$blue-100: #caecff;
+
+$green-500: oklch(70% 0.2155 150);
+
+// =====================
+// Semantic
+// 컴포넌트에서는 아래 변수만 사용합니다
+// =====================
+
+// Background
+$bg-default: $white;
+$bg-muted: $gray-100;
+
+// Text
+$text-default: $gray-900;
+$text-muted: $gray-500;
+$text-disabled: $gray-400;
+$text-inverse: $white;
+
+// Border
+$border-default: $gray-200;
+$border-strong: $gray-400;
+
+// Accent
+$color-accent: $blue-400;
+$color-highlight: $blue-100;
+
+// =====================
+// Font
+// =====================
+$font-system: var(--font-system);
+$font-sans: var(--font-sans);
+
+// =====================
+// Layout
+// =====================
+$header-height: 100px;

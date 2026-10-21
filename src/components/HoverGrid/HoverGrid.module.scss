@@ -1,8 +1,6 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
-// Positioning context for the highlight (getCellBox measures from here)
-// 하이라이트의 기준 영역 (getCellBox가 여기를 기준으로 측정)
 .board {
   position: relative;
   width: 100%;
@@ -40,8 +38,6 @@
   }
 }
 
-// Fill: the visible color that slides in/out
-// fill: 실제로 보이는 색, 안팎으로 슬라이드
 .highlightFill {
   display: block;
   width: 100%;

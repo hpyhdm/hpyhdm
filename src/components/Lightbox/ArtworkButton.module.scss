@@ -7,13 +7,13 @@
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 4px;
   text-align: left;
 }
 
 .caption {
   display: flex;
   flex-direction: column;
+  padding: 4px;
   // Same color as the cell, so it stays hidden until hover
   // 셀 배경과 같은 색이라 hover 전까지는 보이지 않음
   color: $bg-muted;
@@ -37,6 +37,7 @@
   @include media(false, tablet) {
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
     padding: 3px 6px;
     color: $text-default;
   }

@@ -1,8 +1,15 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
 .scene {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  @include media(false, tablet) {
+    height: 25vh;
+  }
 }
 
 .clouds {

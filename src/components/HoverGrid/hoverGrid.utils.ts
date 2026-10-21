@@ -3,17 +3,17 @@
 
 export type Edge = 'top' | 'right' | 'bottom' | 'left';
 
-export type Offset = {
-  readonly xPercent: number;
-  readonly yPercent: number;
-};
+export type Offset = Readonly<{
+  xPercent: number;
+  yPercent: number;
+}>;
 
-export type CellBox = {
-  readonly x: number;
-  readonly y: number;
-  readonly width: number;
-  readonly height: number;
-};
+export type CellBox = Readonly<{
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}>;
 
 // Fill offset (%) per edge — used as both the enter-from and the exit-to position
 // 변마다 fill의 오프셋(%) — 진입 시작 위치와 나갈 때 도착 위치에 같이 사용
@@ -63,10 +63,10 @@ export const findHoverCell = (target: EventTarget | null): HTMLElement | null =>
 );
 
 // Point type for the frame's current position / 틀의 현재 위치를 나타내는 좌표 타입
-export type Point = {
-  readonly x: number;
-  readonly y: number;
-};
+export type Point = Readonly<{
+  x: number;
+  y: number;
+}>;
 
 // Pixel tolerance for comparing positions / 위치 비교 시 허용 오차(px)
 const ALIGN_TOLERANCE = 1;

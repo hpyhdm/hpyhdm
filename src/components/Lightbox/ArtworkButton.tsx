@@ -5,9 +5,9 @@ import type { ArtworkId } from '@/data/artworks';
 import { useLightboxContext } from './LightboxContext';
 import styles from './ArtworkButton.module.scss';
 
-type Props = {
-  readonly id: ArtworkId; // only a string crosses the server→client boundary / 서버→클라이언트로는 문자열만 전달
-};
+type Props = Readonly<{
+  id: ArtworkId; // only a string crosses the server→client boundary / 서버→클라이언트로는 문자열만 전달
+}>;
 
 // Grid cell that shows the caption and opens the lightbox
 // 캡션을 보여 주고, 클릭하면 라이트박스를 여는 그리드 셀

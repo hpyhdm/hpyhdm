@@ -43,6 +43,12 @@
   height: auto;
   max-width: 100vw;
   max-height: 100dvh;
+
+  // Keep display: block from overriding the hidden attribute
+  // display: block이 hidden 속성을 덮어쓰지 않도록
+  &[hidden] {
+    display: none;
+  }
 }
 
 .close {

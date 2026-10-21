@@ -14,8 +14,6 @@
   display: flex;
   flex-direction: column;
   padding: 4px;
-  // Same color as the cell, so it stays hidden until hover
-  // 셀 배경과 같은 색이라 hover 전까지는 보이지 않음
   color: $bg-muted;
   transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -32,8 +30,6 @@
     color: $text-disabled;
   }
 
-  // One-column layout: a visible list row, year on the right
-  // 1열 레이아웃: 항상 보이는 목록 한 줄, 연도는 오른쪽
   @include media(false, tablet) {
     flex-direction: row;
     justify-content: space-between;

@@ -1,13 +1,13 @@
 // Artwork shown in the home grid and lightbox
 // 홈 그리드와 라이트박스에 쓰는 작품 정보
-export type Artwork = {
-  readonly id: string;
-  readonly src: string;
-  readonly width: number;  // original px / 원본 크기
-  readonly height: number;
-  readonly year: number;
-  readonly title: { readonly ko: string; readonly en: string };
-};
+export type Artwork = Readonly<{
+  id: string;
+  src: string;
+  width: number;  // original px / 원본 크기
+  height: number;
+  year: number;
+  title: Readonly<{ ko: string; en: string }>;
+}>;
 
 // `as const` keeps literal ids ('clouds'…), `satisfies` still checks the shape
 // as const로 id를 리터럴 타입('clouds'…)으로 유지하고, satisfies로 구조는 계속 검사

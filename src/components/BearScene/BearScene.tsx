@@ -5,21 +5,21 @@ import type { CSSProperties } from 'react';
 import { gsap } from 'gsap';
 import styles from './BearScene.module.scss';
 
-type Cloud = {
-  readonly src: string;
-  readonly size: readonly [number, number]; // original px size [w, h] / 원본 이미지 크기 [가로, 세로]
-  readonly position: CSSProperties;         // top / right / bottom / left
-  readonly width: number;                   // % of scene width / 장면 너비 기준 %
-  readonly speed?: number;                  // px per second / 초당 이동 px
-  readonly rotation?: number;               // deg / 회전 각도
-  readonly zIndex?: number;                 // 2 = in front of bear / 곰 앞, -1 = behind other clouds / 다른 구름 뒤
-  readonly isStatic?: boolean;              // ground mass with a flat bottom, does not move / 바닥이 잘린 덩어리, 움직이지 않음
-};
+type Cloud = Readonly<{
+  src: string;
+  size: readonly [number, number]; // original px size [w, h] / 원본 이미지 크기 [가로, 세로]
+  position: CSSProperties;         // top / right / bottom / left
+  width: number;                   // % of scene width / 장면 너비 기준 %
+  speed?: number;                  // px per second / 초당 이동 px
+  rotation?: number;               // deg / 회전 각도
+  zIndex?: number;                 // 2 = in front of bear / 곰 앞, -1 = behind other clouds / 다른 구름 뒤
+  isStatic?: boolean;              // ground mass with a flat bottom, does not move / 바닥이 잘린 덩어리, 움직이지 않음
+}>;
 
-type Path = {
-  readonly forward: number;  // distance to exit bottom-left / 왼쪽 아래로 나가는 거리
-  readonly backward: number; // distance to exit top-right / 오른쪽 위로 나가는 거리
-};
+type Path = Readonly<{
+  forward: number;  // distance to exit bottom-left / 왼쪽 아래로 나가는 거리
+  backward: number; // distance to exit top-right / 오른쪽 위로 나가는 거리
+}>;
 
 const DEFAULT_SPEED = 28;
 const EXIT_MARGIN = 8; // small extra so edges never peek in / 가장자리가 보이지 않도록 약간 여유

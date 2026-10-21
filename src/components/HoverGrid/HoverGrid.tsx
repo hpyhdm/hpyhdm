@@ -7,10 +7,10 @@ import { EDGE_OFFSET, findHoverCell, getCellBox, getEdge, isAligned } from './ho
 import type { CellBox, Edge, Point } from './hoverGrid.utils';
 import styles from './HoverGrid.module.scss';
 
-type Props = {
-  readonly className?: string; // grid layout class from the page / 페이지에서 넘겨주는 그리드 레이아웃 클래스
-  readonly children: ReactNode;
-};
+type Props = Readonly<{
+  className?: string; // grid layout class from the page / 페이지에서 넘겨주는 그리드 레이아웃 클래스
+  children: ReactNode;
+}>;
 
 // Shared tween settings (power1.out ≈ cubic-bezier(0.25, 0.46, 0.45, 0.94))
 // 공통 트윈 설정 (power1.out ≈ cubic-bezier(0.25, 0.46, 0.45, 0.94))

@@ -67,16 +67,22 @@ export default function Lightbox() {
       onClose={close}
     >
       <div className={styles.stage} onClick={handleStageClick}>
-        {artwork && (
+        {/* Render every artwork up front so they are downloaded before opening */}
+        {/* 열기 전에 미리 다운로드되도록 모든 작품을 처음부터 렌더 */}
+        {ARTWORKS.map((item, i) => (
           <Image
+            key={item.id}
             className={styles.image}
-            src={artwork.src}
-            width={artwork.width}
-            height={artwork.height}
+            src={item.src}
+            width={item.width}
+            height={item.height}
             sizes="100vw"
-            alt={`${artwork.title.ko} - ${artwork.title.en}`}
+            alt={`${item.title.ko} - ${item.title.en}`}
+            loading="eager"      // download even while hidden / 숨겨져 있어도 다운로드
+            fetchPriority="low"  // after the page's important files / 페이지 핵심 파일 다음 순서로
+            hidden={i !== index} // show only the chosen one / 선택한 작품만 표시
           />
-        )}
+        ))}
       </div>
 
       <button type="button" className={styles.close} aria-label="Close" onClick={requestClose}>

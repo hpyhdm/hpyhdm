@@ -8,6 +8,12 @@
   border-bottom: 1px solid $border-default;
   background: $bg-default;
   --hover-fill: #{$bg-hover-subtle}; // HoverGrid highlight color / HoverGrid 하이라이트 색
+
+  @include media(false, tablet) {
+    height: auto;
+    border-bottom: 0;
+    padding: 12px 0;
+  }
 }
 
 // HoverGrid's inner grid: 8 columns (title 2, nav 6)
@@ -15,6 +21,12 @@
 .grid {
   @include grid;
   height: 100%;
+
+  // Mobile: title takes the rest, nav only as wide as its links
+  // 모바일: 제목이 남는 공간, nav는 링크 너비만큼만
+  @include media(false, tablet) {
+    grid-template-columns: 1fr auto;
+  }
 }
 
 .title {
@@ -26,6 +38,14 @@
   font-weight: 400;
   letter-spacing: -4px;
   line-height: 1;
+
+  @include media(false, tablet) {
+    grid-column: auto;
+    padding: 0 12px;
+    border-right: 0;
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
 }
 
 .nav {
@@ -33,15 +53,33 @@
 
   ul {
     height: 100%;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid $border-default;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  @include media(false, tablet) {
+    grid-column: auto;
+
+    // Stack links at the top instead of splitting the height
+    // 높이를 나누지 않고 위에서부터 쌓음
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
 
     li {
-      width: 100%;
-      height: 50%;
-      border-bottom: 1px solid $border-default;
-
-      &:last-child {
-        border: 0;
-      }
+      border: 0;
     }
   }
 }
@@ -72,5 +110,15 @@
   // Keyboard users see it too / 키보드로 이동했을 때도 보이도록
   &:focus-visible {
     color: $text-default;
+  }
+
+  // No hover on touch: start black and underlined
+  // 터치에는 호버가 없으므로 처음부터 검정 + 밑줄
+  @include media(false, tablet) {
+    height: auto;
+    padding: 0 12px;
+    color: $text-default;
+    font-size: 16px;
+    text-decoration: underline;
   }
 }

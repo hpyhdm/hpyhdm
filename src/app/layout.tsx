@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
-import { Sniglet } from 'next/font/google';
 import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
+import { Sniglet } from 'next/font/google';
 import localFont from 'next/font/local';
 import '../styles/globals.scss';
 

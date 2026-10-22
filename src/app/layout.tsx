@@ -1,7 +1,14 @@
 import type { ReactNode } from 'react';
+import { Sniglet } from 'next/font/google';
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import '../styles/globals.scss';
-import { Sniglet } from 'next/font/google';
+
+// Browser tab title for every page / 모든 페이지의 브라우저 탭 제목
+export const metadata: Metadata = {
+  title: 'hpyhdm',
+};
 
 const sniglet = Sniglet({
   weight: ['400', '800'],

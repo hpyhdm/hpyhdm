@@ -9,7 +9,7 @@
   height: 100%;
   color: $text-default;
   font-size: 3rem; // 48px
-  letter-spacing: -1px;
+  letter-spacing: -3px;
 
   @include media(false, tablet) {
     padding: 3px 6px;

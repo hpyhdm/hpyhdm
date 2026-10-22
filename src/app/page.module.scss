@@ -7,9 +7,6 @@ $grid-count: 4;
   width: 100%;
   height: 100vh;
   height: 100svh;
-  // Moved from .grid so the highlight can sit between the background and the cells
-  // 하이라이트가 배경과 셀 사이에 올 수 있도록 .grid에서 옮겨 옴
-  background: $bg-muted;
 
   @include media(false, tablet) {
     height: auto;

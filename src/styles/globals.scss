@@ -1,4 +1,7 @@
+// Load the reset first so global styles below can override it
+// 리셋을 가장 먼저 불러와서, 아래 전역 스타일이 리셋을 덮어쓸 수 있도록
 @use 'reset';
+@use 'variables' as *;
 
 :root {
   --font-system: system-ui, -apple-system, BlinkMacSystemFont,
@@ -7,8 +10,11 @@
   --font-sans: var(--font-suit), var(--font-system);
 }
 
+// Default body: SUIT font (system fallback) and the site background
+// 기본 body: SUIT 폰트 (실패 시 시스템 폰트)와 사이트 배경
 body {
   font-family: var(--font-sans);
   font-size: 0.875rem; // 14px at browser default / 브라우저 기본 설정 기준 14px
   letter-spacing: -0.02rem;
+  background: $bg-muted;
 }

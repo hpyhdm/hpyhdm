@@ -43,16 +43,32 @@ export const getEdge = (rect: DOMRectReadOnly, x: number, y: number): Edge => {
   return edge;
 };
 
-// Cell position/size relative to the nearest positioned parent (.board)
+// Cell box relative to its positioned parent (the grid), measured with sub-pixel precision
+// so fractional row/column sizes (e.g. 100svh / 4) don't leave a gap
+// Excludes the cell's own borders so its lines stay visible
 // Reads layout values only and returns a new object
-// 가장 가까운 position 지정 부모(.board) 기준 셀의 위치/크기
+// 위치 지정 부모(그리드) 기준 셀 박스, 소수점 픽셀까지 측정
+// 행/열 크기가 소수점(예: 100svh / 4)이어도 틈이 생기지 않도록
+// 셀 자신의 테두리는 빼서 선이 가려지지 않음
 // 레이아웃 값을 읽기만 하고 새 객체를 반환
-export const getCellBox = (cell: HTMLElement): CellBox => ({
-  x: cell.offsetLeft,
-  y: cell.offsetTop,
-  width: cell.offsetWidth,
-  height: cell.offsetHeight,
-});
+export const getCellBox = (cell: HTMLElement): CellBox => {
+  const parent = cell.offsetParent;
+  const cellRect = cell.getBoundingClientRect();
+  const parentRect = parent instanceof HTMLElement ? parent.getBoundingClientRect() : new DOMRect();
+  const style = getComputedStyle(cell);
+
+  const borderTop = parseFloat(style.borderTopWidth);
+  const borderRight = parseFloat(style.borderRightWidth);
+  const borderBottom = parseFloat(style.borderBottomWidth);
+  const borderLeft = parseFloat(style.borderLeftWidth);
+
+  return {
+    x: cellRect.left - parentRect.left + borderLeft,
+    y: cellRect.top - parentRect.top + borderTop,
+    width: cellRect.width - borderLeft - borderRight,
+    height: cellRect.height - borderTop - borderBottom,
+  };
+};
 
 // Finds the hover-target cell (data-hover) that contains the event target
 // Returns null for empty cells, the outside, or non-element targets

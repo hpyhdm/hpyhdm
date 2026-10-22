@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   padding: 4px;
-  color: $bg-muted;
+  color: $bg-cell; // same as the cell background, so hidden until hover / 셀 배경과 같은 색이라 호버 전에는 안 보임
   transition: color $duration-hover $ease-out;
 
   // Only on devices that can really hover (not touch)

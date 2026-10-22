@@ -1,6 +1,13 @@
 import type { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import '../styles/globals.scss';
+import { Sniglet } from 'next/font/google';
+
+const sniglet = Sniglet({
+  weight: ['400', '800'],
+  subsets: ['latin'],
+  variable: '--font-sniglet',
+});
 
 const suit = localFont({
   src: './fonts/SUIT-Variable.woff2',

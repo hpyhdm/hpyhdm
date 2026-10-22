@@ -42,5 +42,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: $bg-hover;
+  // Overridable from the parent via --hover-fill, defaults to $bg-hover
+  // 부모에서 --hover-fill로 바꿀 수 있고, 없으면 $bg-hover
+  background: var(--hover-fill, #{$bg-hover});
 }

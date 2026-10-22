@@ -2,7 +2,7 @@ export default function Page() {
   return (
     <main>
       <section>
-        note
+        archive
       </section>
     </main>
   );

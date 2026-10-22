@@ -44,3 +44,19 @@ export type Company = Readonly<{
   brief?: Localized;            // one-line summary / 한 줄 소개
   projects: readonly Project[];
 }>;
+
+// One contact link (label is not translated)
+// 연락처 링크 하나 (라벨은 번역하지 않음)
+export type Contact = Readonly<{
+  label: string;
+  href: string;  // mailto: or https: / mailto: 또는 https:
+}>;
+
+// Profile row at the top of the resume
+// 이력서 상단 프로필 행
+export type Profile = Readonly<{
+  name: Localized;
+  position: Localized;
+  motto: Localized;
+  contacts: readonly Contact[];
+}>;

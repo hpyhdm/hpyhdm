@@ -23,10 +23,10 @@ export default function Page() {
           </div>
           <div className={`${styles.cell} ${styles.spacer}`}></div>
           <div className={`${styles.cell} ${styles.nav}`} data-hover>
-            <GridLink href="/resume" label="/Resume"/>
+            <GridLink href="/archive" label="/Archive"/>
           </div>
           <div className={`${styles.cell} ${styles.nav}`} data-hover>
-            <GridLink href="/note" label="/Note"/>
+            <GridLink href="/resume" label="/Resume"/>
           </div>
           <div className={styles.cell} data-hover>
             <ArtworkButton id="chin"/>

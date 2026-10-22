@@ -15,7 +15,7 @@
   flex-direction: column;
   padding: 4px;
   color: $bg-muted;
-  transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: color $duration-hover $ease-out;
 
   // Only on devices that can really hover (not touch)
   // 실제로 hover가 가능한 기기에서만 (터치 기기 제외)

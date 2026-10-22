@@ -1,4 +1,20 @@
 @use 'sass:map';
+@use 'variables' as *;
+
+// Page-level grid: N equal columns
+// 페이지 단위 그리드: 같은 너비의 N개 열
+@mixin grid($columns: $grid-columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+// A row that spans the full width and reuses the parent's columns
+// 전체 너비를 차지하면서 부모의 열을 그대로 쓰는 행
+@mixin subgrid-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
 
 // Breakpoints / 브레이크포인트
 $breakpoints: (

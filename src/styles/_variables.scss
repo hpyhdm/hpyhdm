@@ -5,6 +5,7 @@
 $white: #ffffff;
 
 $gray-100: #fafafa;
+$gray-110: #f6f6f6;
 $gray-120: #f5f5f5;
 $gray-150: #e7e7e7;
 $gray-200: #e5e5e5;
@@ -27,6 +28,7 @@ $bg-default: $white;
 $bg-muted: $gray-100;
 $bg-cell: $gray-120; // hover-target cell / hover 대상 셀
 $bg-hover: $gray-150; // hover highlight / 호버 하이라이트
+$bg-hover-subtle: $gray-110; // lighter hover for sub pages / 서브 페이지용 연한 호버
 
 // Text
 $text-default: $gray-900;
@@ -47,8 +49,18 @@ $color-highlight: $blue-100;
 // =====================
 $font-system: var(--font-system);
 $font-sans: var(--font-sans);
+$font-sniglet: var(--font-sniglet), $font-system;
+
+// =====================
+// Motion
+// Same values as the GSAP TWEEN in HoverGrid.tsx (0.4, power1.out) — change both together
+// HoverGrid.tsx의 GSAP TWEEN(0.4, power1.out)과 같은 값 — 바꿀 때 함께 수정
+// =====================
+$duration-hover: 0.4s;
+$ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94); // ≈ GSAP power1.out
 
 // =====================
 // Layout
 // =====================
 $header-height: 100px;
+$grid-columns: 8; // site-wide column count (home uses half: 4) / 사이트 공통 열 개수 (홈은 절반인 4)

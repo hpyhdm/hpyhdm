@@ -47,6 +47,7 @@ export const CAREERS = [
       {
         id: 'db-group-ci',
         name: {ko: 'DB그룹 CI 아카이브 개편', en: 'DB Group CI Archive Renewal'},
+        url: 'https://ci.dbgroup.co.kr/',
         periods: [{kind: 'range', from: '2025.10', to: '2025.12'}],
         bullets: [
           {
@@ -66,6 +67,7 @@ export const CAREERS = [
       {
         id: 'db-hitek',
         name: {ko: 'DB HiTek 리뉴얼', en: 'DB HiTek Website Renewal'},
+        url: 'https://dbhitek.com/',
         periods: [{kind: 'range', from: '2025.03', to: '2025.06'}],
         bullets: [
           {
@@ -85,6 +87,7 @@ export const CAREERS = [
       {
         id: 'daesang-wellife',
         name: {ko: '대상웰라이프', en: 'Daesang Wellife'},
+        url: 'https://www.daesangwellife.com/',
         periods: [{kind: 'range', from: '2024.12', to: '2025.05'}],
         bullets: [
           {
@@ -108,6 +111,7 @@ export const CAREERS = [
       {
         id: 'xi-elevator',
         name: {ko: '자이엘리베이터 (GS엘리베이터 구축 → CI 리뉴얼)', en: 'XI Elevator (GS Elevator Build → CI Renewal)'},
+        url: 'https://www.xielevator.com/',
         periods: [
           {kind: 'range', from: '2023.09', to: '2023.12'},
           {kind: 'range', from: '2025.03', to: '2025.04'},
@@ -130,6 +134,7 @@ export const CAREERS = [
       {
         id: 'samyang-ci',
         name: {ko: '삼양그룹 전사 CI 변경', en: 'Samyang Group CI Renewal'},
+        url: 'https://www.samyang.com/',
         periods: [{kind: 'range', from: '2024.07', to: '2024.10'}],
         bullets: [
           {
@@ -149,6 +154,7 @@ export const CAREERS = [
       {
         id: 'hanatour',
         name: {ko: '하나투어 기업 웹사이트', en: 'Hanatour Corporate Website'},
+        url: 'https://www.hanatourcompany.com/',
         periods: [{kind: 'range', from: '2024.04', to: '2024.07'}],
         bullets: [
           {
@@ -164,6 +170,7 @@ export const CAREERS = [
       {
         id: 'samick-thk',
         name: {ko: '삼익THK 통합 사이트 리뉴얼', en: 'Samick THK Integrated Site Renewal'},
+        url: 'https://www.samickthk.co.kr/',
         periods: [{kind: 'range', from: '2023.12', to: '2024.05'}],
         bullets: [
           {
@@ -179,6 +186,7 @@ export const CAREERS = [
       {
         id: 'samsung-em',
         name: {ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations'},
+        url: 'https://www.samsungsem.com/',
         periods: [{kind: 'maintenance'}],
         bullets: [
           {
@@ -206,6 +214,7 @@ export const CAREERS = [
       {
         id: 'samyang-specialty',
         name: {ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations'},
+        url: 'https://samyangspecialty.com/',
         periods: [{kind: 'maintenance'}],
         bullets: [
           {

@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.page    { @include grid; }
+.row     { @include subgrid-row; }
+
+.company { grid-column: 1 / 3; }  // 1–2열
+.brief   { grid-column: 3 / -1; } // 3–8열
+.project { grid-column: 3 / 5; }  // 3–4열
+.bullets { grid-column: 5 / -1; } // 5–8열
+

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import type { PointerEvent, ReactNode } from 'react';
 import { gsap } from 'gsap';
 import { EDGE_OFFSET, findHoverCell, getCellBox, getEdge, isAligned } from './hoverGrid.utils';
@@ -59,13 +59,22 @@ export default function HoverGrid({className = '', children}: Props) {
   const frameRef = useRef<HTMLSpanElement>(null);
   const fillRef = useRef<HTMLSpanElement>(null);
 
-  // Stop running tweens on unmount / 언마운트 시 진행 중인 트윈 정리
-  useEffect(() => {
+  // Runs on unmount and when Activity hides this page (navigation)
+  // Stop running tweens and push the fill out of the frame: the same idle state
+  // as after leaving a cell, so the old highlight doesn't reappear when coming back
+  // 언마운트될 때와 Activity가 페이지를 숨길 때(페이지 이동) 실행
+  // 진행 중인 트윈을 멈추고 fill을 틀 밖으로 밀어냄: 칸에서 나갔을 때와 같은 대기 상태라서
+  // 뒤로 돌아왔을 때 예전 하이라이트가 다시 보이지 않음
+  useLayoutEffect(() => {
     const frame = frameRef.current;
     const fill = fillRef.current;
 
     return () => {
       gsap.killTweensOf([frame, fill]);
+
+      if (fill) {
+        gsap.set(fill, EDGE_OFFSET.top);
+      }
     };
   }, []);
 

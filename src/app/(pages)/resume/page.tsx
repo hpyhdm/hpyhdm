@@ -8,6 +8,8 @@ import styles from './page.module.scss';
 // 외부 링크(http/https)는 새 탭으로, mailto:는 그대로
 const isExternal = (href: string): boolean => href.startsWith('http');
 
+// Whole body depends on ?lang, so there is no static shell to show first
+// 본문 전체가 ?lang에 따라 달라져서 먼저 보여줄 정적 화면이 없음
 export const instant = false;
 
 export default async function Page(props: PageProps<'/resume'>) {
@@ -15,7 +17,7 @@ export default async function Page(props: PageProps<'/resume'>) {
   const t = pick(lang);
 
   return (
-    <main className={styles.page}>
+    <main className={styles.page} lang={lang}>
       {/* Language toggle: plain links, no client JS / 언어 토글: 그냥 링크라 클라이언트 JS 불필요 */}
       <div className={styles.lang}>
         {/* HoverGrid: 2 cells with the moving highlight / HoverGrid: 하이라이트가 움직이는 2칸 */}
@@ -41,7 +43,7 @@ export default async function Page(props: PageProps<'/resume'>) {
         <div>
           <dt>Contact</dt>
           <dd>
-            <ul>
+            <ul role="list">
               {PROFILE.contacts.map((contact) => (
                 <li key={contact.href}>
                   <a

@@ -54,3 +54,5 @@ $ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94); // ≈ GSAP power1.out
 // =====================
 $header-height: 100px;
 $grid-columns: 8; // site-wide column count (home uses half: 4) / 사이트 공통 열 개수 (홈은 절반인 4)
+$cell-padding-x: 6px; // inner left/right space of a grid cell / 그리드 칸 안쪽 좌우 여백
+$cell-padding-x-mobile: 12px; // below tablet / tablet 미만

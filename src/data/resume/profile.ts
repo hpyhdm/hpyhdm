@@ -7,8 +7,8 @@ export const PROFILE = {
   position: {ko: '웹 프론트엔드 개발자', en: 'Web Frontend Developer'},
   motto: {ko: '뜻이 있는 곳에 길이 있다.', en: 'Where there is a will, there is a way.'},
   contacts: [
-    {label: 'hadamjang.dev@gmail.com', href: 'mailto:hadamjang.dev@gmail.com'},
-    {label: 'LinkedIn', href: 'https://www.linkedin.com/in/hadam-jang-10256536a/'},
-    {label: 'Github', href: 'https://github.com/happycodehouse'},
+    {label: 'hpyhdm@gmail.com', href: 'mailto:hpyhdm@gmail.com'},
+    {label: 'LinkedIn', href: 'https://www.linkedin.com/'},
+    {label: 'Github', href: 'https://github.com/hpyhdm'},
   ],
 } as const satisfies Profile;

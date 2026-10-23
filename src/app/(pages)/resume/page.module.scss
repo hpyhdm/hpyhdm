@@ -1,11 +1,150 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-.page    { @include grid; }
-.row     { @include subgrid-row; }
+.page {
+  @include grid;
+}
 
-.company { grid-column: 1 / 3; }  // 1–2열
-.brief   { grid-column: 3 / -1; } // 3–8열
-.project { grid-column: 3 / 5; }  // 3–4열
-.bullets { grid-column: 5 / -1; } // 5–8열
+// Page cols 1–2 / 페이지 1–2열
+.lang {
+  grid-column: 1 / 3;
+  --hover-fill: #{$bg-hover-subtle}; // same as the header / 헤더와 같은 색
 
+  @include media(false, tablet) {
+    grid-column: 1 / -1;
+  }
+}
+
+// Two equal cells inside the HoverGrid / HoverGrid 안의 같은 너비 2칸
+.langGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  a {
+    position: relative;
+    z-index: 3; // above the highlight / 하이라이트보다 위
+    aspect-ratio: 1 / 1;
+    padding: $cell-padding-x;
+    border-right: 1px solid $border-default;
+    border-bottom: 1px solid $border-default;
+
+    &[aria-current] {
+      background-color: var(--hover-fill);
+      font-weight: 700;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover a[aria-current] {
+      background-color: transparent;
+    }
+  }
+
+  @include media(false, tablet) {
+    a {
+      aspect-ratio: auto;
+      padding: $cell-padding-x-mobile;
+    }
+  }
+}
+
+// Page cols 3–8, split into 4 equal parts / 페이지 3–8열을 4등분
+.profile {
+  grid-column: 3 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid $border-default;
+
+  > div {
+    padding: $cell-padding-x;
+  }
+
+  dt {
+    padding-bottom: $cell-padding-x;
+    margin-bottom: $cell-padding-x;
+    border-bottom: 1px solid $border-default;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  dt::after {
+    content: ' /';
+  }
+
+  dd {
+    font-weight: 500;
+  }
+
+  a {
+    line-height: 1.8;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: $cell-padding-x;
+    padding: $cell-padding-x-mobile; // keeps the divider inset at both ends / 구분선 양 끝을 들여주는 여백
+
+    // Remove the wrappers from layout so dt/dd become grid items
+    // 감싸는 div를 레이아웃에서 빼서 dt/dd가 그리드 칸이 되도록
+    > div {
+      display: contents;
+    }
+
+    // All labels first, then all values / 라벨 전부 먼저, 값은 그 뒤
+    dt {
+      order: 1;
+      margin-bottom: 0;
+      border-bottom: 0; // reset, then add only to the 2nd row / 일단 지우고 두 번째 줄에만 다시
+    }
+
+    dd {
+      order: 2;
+    }
+
+    // Divider under the second row of labels (MOTTO, CONTACT)
+    // 두 번째 라벨 줄(MOTTO, CONTACT) 아래 구분선
+    > div:nth-child(n + 3) dt {
+      padding-bottom: 12px;
+      border-bottom: 1px solid $border-default;
+    }
+
+    // Right column (POSITION, CONTACT): line up with the ENG text
+    // 오른쪽 열(POSITION, CONTACT): ENG 글자와 정렬
+    > div:nth-child(even) :is(dt, dd) {
+      padding-left: $cell-padding-x-mobile;
+    }
+  }
+}
+
+
+.row {
+  @include subgrid-row;
+}
+
+// 1–2열
+.company {
+  grid-column: 1 / 3;
+}
+
+// 3–8열
+.brief {
+  grid-column: 3 / -1;
+}
+
+// 3–4열
+.project {
+  grid-column: 3 / 5;
+}
+
+// 5–8열
+.bullets {
+  grid-column: 5 / -1;
+}

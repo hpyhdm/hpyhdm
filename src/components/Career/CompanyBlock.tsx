@@ -1,10 +1,10 @@
-import {pick} from '@/lib/i18n';
-import type {Lang} from '@/lib/i18n';
-import {BASELINE} from '@/data/resume/careers';
-import {formatPeriod} from '@/data/resume/format';
-import type {Company} from '@/data/resume/types';
+import { pick } from '@/lib/i18n';
+import type { Lang } from '@/lib/i18n';
+import { BASELINE } from '@/data/resume/careers';
+import { formatPeriod } from '@/data/resume/format';
+import type { Company } from '@/data/resume/types';
 import ProjectRow from './ProjectRow';
-import {byKind, OPERATIONS_LABEL} from './career.utils';
+import { byKind, OPERATIONS_LABEL } from './career.utils';
 import styles from './CompanyBlock.module.scss';
 
 type Props = Readonly<{
@@ -14,7 +14,7 @@ type Props = Readonly<{
 
 // One company: sticky info on the left, brief and project groups on the right
 // 회사 하나: 왼쪽 sticky 정보, 오른쪽 brief와 프로젝트 그룹
-export default function CompanyBlock({company, lang}: Props) {
+export default function CompanyBlock({ company, lang }: Props) {
   const t = pick(lang);
   const builds = byKind('build')(company.projects);
   const operations = byKind('operations')(company.projects);
@@ -29,7 +29,7 @@ export default function CompanyBlock({company, lang}: Props) {
         {/* TODO: brief, BASELINE / 한 줄 소개, 공통 기본기 */}
         <ul className={styles.projects} role="list">
           {builds.map((project) => (
-            <ProjectRow key={project.id} project={project} lang={lang} />
+            <ProjectRow key={project.id} project={project} lang={lang}/>
           ))}
         </ul>
         {/* TODO: render only when operations.length > 0 / operations가 있을 때만 */}

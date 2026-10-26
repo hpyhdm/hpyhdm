@@ -1,7 +1,7 @@
-import {pick} from '@/lib/i18n';
-import type {Lang} from '@/lib/i18n';
-import {formatPeriods, formatTeamSize} from '@/data/resume/format';
-import type {Project} from '@/data/resume/types';
+import { pick } from '@/lib/i18n';
+import type { Lang } from '@/lib/i18n';
+import { formatPeriods, formatTeamSize } from '@/data/resume/format';
+import type { Project } from '@/data/resume/types';
 import styles from './ProjectRow.module.scss';
 
 type Props = Readonly<{
@@ -11,7 +11,7 @@ type Props = Readonly<{
 
 // One project row: meta column on the left, bullets on the right
 // 프로젝트 한 줄: 왼쪽 메타 칸, 오른쪽 bullet
-export default function ProjectRow({project, lang}: Props) {
+export default function ProjectRow({ project, lang }: Props) {
   const t = pick(lang);
 
   return (

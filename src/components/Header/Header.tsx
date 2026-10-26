@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
-import {getNavItems, getPageTitle} from './header.utils';
+import { usePathname } from 'next/navigation';
+import { getNavItems, getPageTitle } from './header.utils';
 import styles from './Header.module.scss';
 import HoverGrid from '@/components/HoverGrid/HoverGrid';
 

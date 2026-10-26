@@ -18,10 +18,10 @@ export type CellBox = Readonly<{
 // Fill offset (%) per edge — used as both the enter-from and the exit-to position
 // 변마다 fill의 오프셋(%) — 진입 시작 위치와 나갈 때 도착 위치에 같이 사용
 export const EDGE_OFFSET: Readonly<Record<Edge, Offset>> = {
-  top: {xPercent: 0, yPercent: -100},
-  right: {xPercent: 100, yPercent: 0},
-  bottom: {xPercent: 0, yPercent: 100},
-  left: {xPercent: -100, yPercent: 0},
+  top: { xPercent: 0, yPercent: -100 },
+  right: { xPercent: 100, yPercent: 0 },
+  bottom: { xPercent: 0, yPercent: 100 },
+  left: { xPercent: -100, yPercent: 0 },
 };
 
 // Returns the edge of the rect nearest to the pointer (pure)

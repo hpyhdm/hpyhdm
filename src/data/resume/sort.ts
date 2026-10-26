@@ -36,15 +36,15 @@ const latestKey = (periods: readonly Period[]): SortKey =>
     .map(periodKey)
     .reduce<SortKey>(
       (latest, key) => (compareKeys(key, latest) < 0 ? key : latest),
-      {end: NO_DATE_KEY, start: NO_DATE_KEY},
+      { end: NO_DATE_KEY, start: NO_DATE_KEY },
     );
 
 // Build a newest-first sorter from a key getter (input is never mutated)
 // 키를 꺼내는 함수로 최신순 정렬 함수를 만듦 (원본은 바꾸지 않음)
 const sortByLatest =
-  <T,>(getKey: (item: T) => SortKey) =>
-  (items: readonly T[]): readonly T[] =>
-    items.toSorted((a, b) => compareKeys(getKey(a), getKey(b)));
+  <T, >(getKey: (item: T) => SortKey) =>
+    (items: readonly T[]): readonly T[] =>
+      items.toSorted((a, b) => compareKeys(getKey(a), getKey(b)));
 
 // Projects: by their latest period
 // 프로젝트: 가장 늦은 기간 기준

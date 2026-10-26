@@ -18,7 +18,7 @@ export const ARTWORKS = [
     width: 4096,
     height: 1714,
     year: 2018,
-    title: {ko: '구름 사이로', en: 'Through the Clouds'},
+    title: { ko: '구름 사이로', en: 'Through the Clouds' },
   },
   {
     id: 'chin',
@@ -26,7 +26,7 @@ export const ARTWORKS = [
     width: 2070,
     height: 2080,
     year: 2018,
-    title: {ko: '턱을 괴고서', en: 'Chin in Hand'},
+    title: { ko: '턱을 괴고서', en: 'Chin in Hand' },
   },
   {
     id: 'fell',
@@ -34,7 +34,7 @@ export const ARTWORKS = [
     width: 4210,
     height: 5387,
     year: 2018,
-    title: {ko: '넘어졌어요.. 그런데', en: 'I fell... But'},
+    title: { ko: '넘어졌어요.. 그런데', en: 'I fell... But' },
   },
 ] as const satisfies readonly Artwork[];
 

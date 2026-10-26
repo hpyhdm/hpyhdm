@@ -11,10 +11,10 @@ type Props = Readonly<{
 
 // Grid cell that shows the caption and opens the lightbox
 // 캡션을 보여 주고, 클릭하면 라이트박스를 여는 그리드 셀
-export default function ArtworkButton({id}: Props) {
-  const {open} = useLightboxContext();
+export default function ArtworkButton({ id }: Props) {
+  const { open } = useLightboxContext();
   const index = getArtworkIndex(id);
-  const {year, title} = ARTWORKS[index];
+  const { year, title } = ARTWORKS[index];
 
   return (
     <button type="button" className={styles.button} onClick={() => open(index)}>

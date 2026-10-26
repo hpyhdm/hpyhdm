@@ -13,7 +13,7 @@ const FADE_DURATION = 0.15; // seconds, same as the old UIkit site / 초, 예전
 // Full-screen image viewer built on <dialog>, faded with GSAP
 // <dialog> 기반 전체 화면 이미지 뷰어, 페이드는 GSAP
 export default function Lightbox() {
-  const {index, close} = useLightboxContext();
+  const { index, close } = useLightboxContext();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // Keep the artwork while fading out (index is still set until onClose)
@@ -27,7 +27,7 @@ export default function Lightbox() {
     if (!dialog || index === null) return;
 
     dialog.showModal();
-    gsap.fromTo(dialog, {opacity: 0}, {opacity: 1, duration: FADE_DURATION, ease: 'none', overwrite: true});
+    gsap.fromTo(dialog, { opacity: 0 }, { opacity: 1, duration: FADE_DURATION, ease: 'none', overwrite: true });
   }, [index]);
 
   // Fade out first, then really close (onClose syncs the state)

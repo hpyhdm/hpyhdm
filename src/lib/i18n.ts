@@ -17,5 +17,5 @@ export const parseLang = (value: unknown): Lang =>
 // 주어진 언어의 텍스트 꺼내기
 export const pick =
   (lang: Lang) =>
-  (text: Localized): string =>
-    text[lang];
+    (text: Localized): string =>
+      text[lang];

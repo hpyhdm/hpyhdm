@@ -11,7 +11,7 @@ const LightboxContext = createContext<LightboxControls | null>(null);
 
 // Holds state only; children are rendered on the server
 // 상태만 보유하고, children은 서버에서 렌더된 결과 그대로 전달
-export default function LightboxProvider({children}: { children: ReactNode }) {
+export default function LightboxProvider({ children }: { children: ReactNode }) {
   const lightbox = useLightbox();
 
   return <LightboxContext value={lightbox}>{children}</LightboxContext>;

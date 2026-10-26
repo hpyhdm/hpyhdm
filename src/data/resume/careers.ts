@@ -13,12 +13,12 @@ export const CAREERS = [
   // ───────────────────────── The Uber Creative / 위버크리에이티브 ─────────────────────────
   {
     id: 'uber-creative',
-    name: {ko: '위버크리에이티브', en: 'The Uber Creative'},
-    role: {ko: '프론트엔드 개발자', en: 'Frontend Developer'},
-    team: {ko: 'UI개발팀', en: 'UI Development Team'},
-    location: {ko: '대한민국 서울', en: 'Seoul, South Korea'},
+    name: { ko: '위버크리에이티브', en: 'The Uber Creative' },
+    role: { ko: '프론트엔드 개발자', en: 'Frontend Developer' },
+    team: { ko: 'UI개발팀', en: 'UI Development Team' },
+    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
-    period: {kind: 'range', from: '2023.09', to: null}, // still working here / 재직 중
+    period: { kind: 'range', from: '2023.09', to: null }, // still working here / 재직 중
     brief: {
       ko: '디지털 에이전시에서 프론트엔드 개발자로 근무하며 기업 웹사이트 구축과 유지운영을 담당하고 있습니다.',
       en: 'Working as a Frontend Developer at a digital agency, responsible for corporate website development and maintenance.',
@@ -27,10 +27,10 @@ export const CAREERS = [
       {
         id: 'esteel4u',
         kind: 'build',
-        name: {ko: '이스틸포유 기업 홈페이지 리뉴얼', en: 'Esteel4U Corporate Website Renewal'},
+        name: { ko: '이스틸포유 기업 홈페이지 리뉴얼', en: 'Esteel4U Corporate Website Renewal' },
         url: 'https://home.esteel4u.com/',
-        periods: [{kind: 'range', from: '2026.07', to: '2026.09'}],
-        focus: {ko: '관리자 직접 수정', en: 'Admin-editable'},
+        periods: [{ kind: 'range', from: '2026.07', to: '2026.09' }],
+        focus: { ko: '관리자 직접 수정', en: 'Admin-editable' },
         teamSize: 2,
         bullets: [
           {
@@ -50,10 +50,10 @@ export const CAREERS = [
       {
         id: 'db-group-ci',
         kind: 'build',
-        name: {ko: 'DB그룹 CI 아카이브 개편', en: 'DB Group CI Archive Renewal'},
+        name: { ko: 'DB그룹 CI 아카이브 개편', en: 'DB Group CI Archive Renewal' },
         url: 'https://ci.dbgroup.co.kr/',
-        periods: [{kind: 'range', from: '2025.10', to: '2025.12'}],
-        focus: {ko: '자동화', en: 'Automation'},
+        periods: [{ kind: 'range', from: '2025.10', to: '2025.12' }],
+        focus: { ko: '자동화', en: 'Automation' },
         teamSize: 2,
         bullets: [
           {
@@ -73,11 +73,11 @@ export const CAREERS = [
       {
         id: 'db-hitek',
         kind: 'build',
-        name: {ko: 'DB HiTek 리뉴얼', en: 'DB HiTek Website Renewal'},
+        name: { ko: 'DB HiTek 리뉴얼', en: 'DB HiTek Website Renewal' },
         url: 'https://dbhitek.com/',
-        periods: [{kind: 'range', from: '2025.03', to: '2025.06'}],
+        periods: [{ kind: 'range', from: '2025.03', to: '2025.06' }],
         maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
-        focus: {ko: '다국어 대응', en: 'Localization'},
+        focus: { ko: '다국어 대응', en: 'Localization' },
         teamSize: 2,
         bullets: [
           {
@@ -97,11 +97,11 @@ export const CAREERS = [
       {
         id: 'daesang-wellife',
         kind: 'build',
-        name: {ko: '대상웰라이프', en: 'Daesang Wellife'},
+        name: { ko: '대상웰라이프', en: 'Daesang Wellife' },
         url: 'https://www.daesangwellife.com/',
-        periods: [{kind: 'range', from: '2024.12', to: '2025.05'}],
+        periods: [{ kind: 'range', from: '2024.12', to: '2025.05' }],
         maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
-        focus: {ko: '스타일가이드 코드화', en: 'Style guide'},
+        focus: { ko: '스타일가이드 코드화', en: 'Style guide' },
         teamSize: 3,
         bullets: [
           {
@@ -125,13 +125,13 @@ export const CAREERS = [
       {
         id: 'xi-elevator',
         kind: 'build',
-        name: {ko: '자이엘리베이터 (GS엘리베이터 구축 → CI 리뉴얼)', en: 'XI Elevator (GS Elevator Build → CI Renewal)'},
+        name: { ko: '자이엘리베이터 (GS엘리베이터 구축 → CI 리뉴얼)', en: 'XI Elevator (GS Elevator Build → CI Renewal)' },
         url: 'https://www.xielevator.com/',
         periods: [
-          {kind: 'range', from: '2023.09', to: '2023.12'},
-          {kind: 'range', from: '2025.03', to: '2025.04'},
+          { kind: 'range', from: '2023.09', to: '2023.12' },
+          { kind: 'range', from: '2025.03', to: '2025.04' },
         ],
-        focus: {ko: '사명 변경 리뉴얼', en: 'Rebrand'},
+        focus: { ko: '사명 변경 리뉴얼', en: 'Rebrand' },
         bullets: [
           {
             ko: '입사 직후 진행 중인 구축 프로젝트에 합류(3인), 기존 공통 컴포넌트 구조를 파악해 제품·유지보수 페이지 개발',
@@ -150,10 +150,10 @@ export const CAREERS = [
       {
         id: 'samyang-ci',
         kind: 'build',
-        name: {ko: '삼양그룹 전사 CI 변경', en: 'Samyang Group CI Renewal'},
+        name: { ko: '삼양그룹 전사 CI 변경', en: 'Samyang Group CI Renewal' },
         url: 'https://www.samyang.com/',
-        periods: [{kind: 'range', from: '2024.07', to: '2024.10'}],
-        focus: {ko: '12개 사이트', en: 'Multi-site'},
+        periods: [{ kind: 'range', from: '2024.07', to: '2024.10' }],
+        focus: { ko: '12개 사이트', en: 'Multi-site' },
         teamSize: 3,
         bullets: [
           {
@@ -173,10 +173,10 @@ export const CAREERS = [
       {
         id: 'hanatour',
         kind: 'build',
-        name: {ko: '하나투어 기업 웹사이트', en: 'Hanatour Corporate Website'},
+        name: { ko: '하나투어 기업 웹사이트', en: 'Hanatour Corporate Website' },
         url: 'https://www.hanatourcompany.com/',
-        periods: [{kind: 'range', from: '2024.04', to: '2024.07'}],
-        focus: {ko: '스크롤 슬라이드', en: 'Scroll slider'},
+        periods: [{ kind: 'range', from: '2024.04', to: '2024.07' }],
+        focus: { ko: '스크롤 슬라이드', en: 'Scroll slider' },
         teamSize: 3,
         bullets: [
           {
@@ -192,10 +192,10 @@ export const CAREERS = [
       {
         id: 'samick-thk',
         kind: 'build',
-        name: {ko: '삼익THK 통합 사이트 리뉴얼', en: 'Samick THK Integrated Site Renewal'},
+        name: { ko: '삼익THK 통합 사이트 리뉴얼', en: 'Samick THK Integrated Site Renewal' },
         url: 'https://www.samickthk.co.kr/',
-        periods: [{kind: 'range', from: '2023.12', to: '2024.05'}],
-        focus: {ko: '타임라인 인터랙션', en: 'Timeline'},
+        periods: [{ kind: 'range', from: '2023.12', to: '2024.05' }],
+        focus: { ko: '타임라인 인터랙션', en: 'Timeline' },
         teamSize: 4,
         bullets: [
           {
@@ -211,10 +211,10 @@ export const CAREERS = [
       {
         id: 'samsung-em',
         kind: 'operations',
-        name: {ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations'},
+        name: { ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations' },
         url: 'https://www.samsungsem.com/',
-        periods: [{kind: 'range', from: '2023.09', to: null}], // since joining / 입사 때부터
-        focus: {ko: '웹접근성 인증', en: 'Accessibility'},
+        periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
+        focus: { ko: '웹접근성 인증', en: 'Accessibility' },
         bullets: [
           {
             ko: '분기별 IR·연혁·주주총회 콘텐츠 업데이트 등 운영 전반 담당, 4단계로 진행되는 주주총회 페이지·팝업을 일정별 예약 스크립트로 오픈·전환·종료',
@@ -245,9 +245,9 @@ export const CAREERS = [
       {
         id: 'samyang-specialty',
         kind: 'operations',
-        name: {ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations'},
+        name: { ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations' },
         url: 'https://samyangspecialty.com/',
-        periods: [{kind: 'range', from: '2023.09', to: null}], // since joining / 입사 때부터
+        periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
         bullets: [
           {
             ko: '매년 전시회 페이지 제작, 신규 페이지 추가 및 콘텐츠 업데이트',
@@ -261,11 +261,11 @@ export const CAREERS = [
   // ───────────────────────── Freelance / 프리랜서 ─────────────────────────
   {
     id: 'freelance',
-    name: {ko: '프리랜서', en: 'Freelance'},
-    role: {ko: '프론트엔드 개발자', en: 'Frontend Developer'},
-    location: {ko: '대한민국 서울', en: 'Seoul, South Korea'},
+    name: { ko: '프리랜서', en: 'Freelance' },
+    role: { ko: '프론트엔드 개발자', en: 'Frontend Developer' },
+    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'freelance',
-    period: {kind: 'range', from: '2024.04', to: '2025.08'},
+    period: { kind: 'range', from: '2024.04', to: '2025.08' },
     brief: {
       ko: '삼성 VXT CMS 프로젝트에 프리랜서로 세 차례 참여해, 개발팀이 실제 개발 전에 참고하는 React 기반 UI 화면과 재사용 컴포넌트를 개발했습니다.',
       en: 'Joined Samsung\'s VXT CMS project three times as a freelancer, building React-based reference UI and reusable components for the development team ahead of production.',
@@ -274,13 +274,13 @@ export const CAREERS = [
       {
         id: 'samsung-vxt',
         kind: 'build',
-        name: {ko: 'Samsung VXT CMS', en: 'Samsung VXT CMS'},
+        name: { ko: 'Samsung VXT CMS', en: 'Samsung VXT CMS' },
         periods: [
-          {kind: 'range', from: '2024.04', to: '2024.06'},
-          {kind: 'range', from: '2024.10', to: '2024.11'},
-          {kind: 'range', from: '2025.06', to: '2025.08'},
+          { kind: 'range', from: '2024.04', to: '2024.06' },
+          { kind: 'range', from: '2024.10', to: '2024.11' },
+          { kind: 'range', from: '2025.06', to: '2025.08' },
         ],
-        focus: {ko: 'React UI', en: 'React'},
+        focus: { ko: 'React UI', en: 'React' },
         bullets: [
           {
             ko: '디자인 시안을 React로 실제 화면화해, 개발팀이 본 개발 전에 UI/UX를 확인하는 기준 화면 제작',
@@ -298,11 +298,11 @@ export const CAREERS = [
   // ───────────────────────── Wever CNS / 위버CNS ─────────────────────────
   {
     id: 'wever-cns',
-    name: {ko: '위버CNS', en: 'Wever CNS'},
-    role: {ko: '웹 퍼블리셔', en: 'Web Publisher'},
-    location: {ko: '대한민국 서울', en: 'Seoul, South Korea'},
+    name: { ko: '위버CNS', en: 'Wever CNS' },
+    role: { ko: '웹 퍼블리셔', en: 'Web Publisher' },
+    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
-    period: {kind: 'range', from: '2021.12', to: '2023.02'},
+    period: { kind: 'range', from: '2021.12', to: '2023.02' },
     brief: {
       ko: '정부기관·기업 웹사이트 구축 에이전시에서 퍼블리셔로 근무하며 대규모 공공 프로젝트와 기업 홈페이지 구축에 참여했습니다.',
       en: 'Worked as a web publisher at an agency building government and corporate websites, contributing to large-scale public projects and corporate sites.',
@@ -313,7 +313,7 @@ export const CAREERS = [
       {
         id: 'presidential-office',
         kind: 'build',
-        name: {ko: '제20대 대통령실 웹사이트 개편', en: '20th Presidential Office Website'},
+        name: { ko: '제20대 대통령실 웹사이트 개편', en: '20th Presidential Office Website' },
         periods: [],
         bullets: [
           {
@@ -325,7 +325,7 @@ export const CAREERS = [
       {
         id: 'cheongwadae-special',
         kind: 'build',
-        name: {ko: '제19대 청와대 특별 페이지', en: '19th Cheong Wa Dae Special Portal'},
+        name: { ko: '제19대 청와대 특별 페이지', en: '19th Cheong Wa Dae Special Portal' },
         periods: [],
         bullets: [
           {
@@ -337,7 +337,7 @@ export const CAREERS = [
       {
         id: 'itcen-daedong',
         kind: 'build',
-        name: {ko: '아이티센그룹·대동 웹사이트', en: 'ITcen Group & Daedong Websites'},
+        name: { ko: '아이티센그룹·대동 웹사이트', en: 'ITcen Group & Daedong Websites' },
         periods: [],
         bullets: [
           {

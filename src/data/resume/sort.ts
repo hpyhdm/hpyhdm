@@ -1,4 +1,4 @@
-import type {Company, Period, Project} from './types';
+import type { Company, Period, Project } from './types';
 
 // Keys are 'YYYY.MM' strings, so plain string comparison gives date order
 // 키는 'YYYY.MM' 문자열이라 문자열 비교만으로 날짜 순서가 맞음
@@ -36,7 +36,7 @@ const latestKey = (periods: readonly Period[]): SortKey =>
     .map(periodKey)
     .reduce<SortKey>(
       (latest, key) => (compareKeys(key, latest) < 0 ? key : latest),
-      {end: NO_DATE_KEY, start: NO_DATE_KEY},
+      { end: NO_DATE_KEY, start: NO_DATE_KEY },
     );
 
 // Build a newest-first sorter from a key getter (input is never mutated)

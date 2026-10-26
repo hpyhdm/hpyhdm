@@ -1,10 +1,10 @@
-import type {Lang} from '@/lib/i18n';
-import {pick} from '@/lib/i18n';
-import type {Period} from './types';
+import type { Lang } from '@/lib/i18n';
+import { pick } from '@/lib/i18n';
+import type { Period } from './types';
 
 // Label used in place of an end date
 // 종료일 대신 쓰는 라벨
-const PRESENT = {ko: '현재', en: 'Present'} as const;
+const PRESENT = { ko: '현재', en: 'Present' } as const;
 
 // One period as display text: '2025.03 – 2025.06', '2023.09 – Present'
 // 기간 하나를 화면용 글자로: '2025.03 – 2025.06', '2023.09 – 현재'

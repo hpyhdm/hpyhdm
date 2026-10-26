@@ -27,20 +27,59 @@ const EXIT_MARGIN = 8; // small extra so edges never peek in / 가장자리가 �
 // Initial composition (same as the previous site).
 // 초기 구도 (예전 사이트와 동일).
 const CLOUDS: readonly Cloud[] = [
-  {src: '/images/main/clouds/cloud-02.png', size: [237, 226], position: {top: '-20%', left: '50%'}, width: 9, speed: 28},
-  {src: '/images/main/clouds/cloud-03.png', size: [329, 439], position: {top: '48%', left: '20.5%'}, width: 9, speed: 30, rotation: 6},
-  {src: '/images/main/clouds/cloud-05.png', size: [319, 289], position: {top: '-10%', right: '10%'}, width: 14, speed: 24, zIndex: -1},
-  {src: '/images/main/clouds/cloud-06.png', size: [170, 200], position: {top: '0', right: '-8%'}, width: 14, speed: 34},
+  {
+    src: '/images/main/clouds/cloud-02.png',
+    size: [237, 226],
+    position: { top: '-20%', left: '50%' },
+    width: 9,
+    speed: 28
+  },
+  {
+    src: '/images/main/clouds/cloud-03.png',
+    size: [329, 439],
+    position: { top: '48%', left: '20.5%' },
+    width: 9,
+    speed: 30,
+    rotation: 6
+  },
+  {
+    src: '/images/main/clouds/cloud-05.png',
+    size: [319, 289],
+    position: { top: '-10%', right: '10%' },
+    width: 14,
+    speed: 24,
+    zIndex: -1
+  },
+  {
+    src: '/images/main/clouds/cloud-06.png',
+    size: [170, 200],
+    position: { top: '0', right: '-8%' },
+    width: 14,
+    speed: 34
+  },
   {
     src: '/images/main/clouds/cloud-07.png',
     size: [285, 259],
-    position: {bottom: '-6%', right: '12%'},
+    position: { bottom: '-6%', right: '12%' },
     width: 16.6,
     zIndex: 2,
     isStatic: true,
   },
-  {src: '/images/main/clouds/cloud-08.png', size: [169, 179], position: {bottom: '48%', right: '18%'}, width: 5.3, speed: 22, zIndex: 2},
-  {src: '/images/main/clouds/cloud-10.png', size: [289, 178], position: {bottom: '0', left: '2%'}, width: 14, isStatic: true},
+  {
+    src: '/images/main/clouds/cloud-08.png',
+    size: [169, 179],
+    position: { bottom: '48%', right: '18%' },
+    width: 5.3,
+    speed: 22,
+    zIndex: 2
+  },
+  {
+    src: '/images/main/clouds/cloud-10.png',
+    size: [289, 178],
+    position: { bottom: '0', left: '2%' },
+    width: 14,
+    isStatic: true
+  },
 ];
 
 // Pure function: how far this cloud must move (at 45°) to just leave the scene in each direction.
@@ -50,8 +89,8 @@ const CLOUDS: readonly Cloud[] = [
 // 왼쪽 아래: 구름 위쪽이 장면 아래를 지나거나, 구름 오른쪽이 장면 왼쪽을 지나면 벗어남.
 // 오른쪽 위: 구름 아래쪽이 장면 위를 지나거나, 구름 왼쪽이 장면 오른쪽을 지나면 벗어남.
 const getPath = (scene: HTMLElement, cloud: HTMLElement): Path => {
-  const {clientWidth: sceneWidth, clientHeight: sceneHeight} = scene;
-  const {offsetTop: top, offsetLeft: left, offsetWidth: width, offsetHeight: height} = cloud;
+  const { clientWidth: sceneWidth, clientHeight: sceneHeight } = scene;
+  const { offsetTop: top, offsetLeft: left, offsetWidth: width, offsetHeight: height } = cloud;
 
   return {
     forward: Math.min(sceneHeight - top, left + width) + EXIT_MARGIN,
@@ -72,20 +111,20 @@ export default function BearScene() {
       const clouds = scene.querySelectorAll<HTMLElement>('[data-cloud]');
 
       clouds.forEach((cloud, index) => {
-        const {speed = DEFAULT_SPEED, rotation = 0, isStatic = false} = CLOUDS[index];
+        const { speed = DEFAULT_SPEED, rotation = 0, isStatic = false } = CLOUDS[index];
 
         // Flat-bottomed ground masses stay in place.
         // 바닥이 잘린 덩어리는 제자리에 고정.
         if (isStatic) return;
 
-        const {forward, backward} = getPath(scene, cloud);
+        const { forward, backward } = getPath(scene, cloud);
         const total = forward + backward;
 
         // Just outside top-right → original spot → just outside bottom-left, forever.
         // 오른쪽 위 바로 밖 → 원래 위치 → 왼쪽 아래 바로 밖을 무한 반복.
         gsap.fromTo(
           cloud,
-          {x: backward, y: -backward, rotation},
+          { x: backward, y: -backward, rotation },
           {
             x: -forward,
             y: forward,
@@ -112,7 +151,7 @@ export default function BearScene() {
             width={cloud.size[0]}
             height={cloud.size[1]}
             alt=""
-            style={{...cloud.position, width: `${cloud.width}%`, zIndex: cloud.zIndex}}
+            style={{ ...cloud.position, width: `${cloud.width}%`, zIndex: cloud.zIndex }}
           />
         ))}
       </div>

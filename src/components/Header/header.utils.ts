@@ -9,9 +9,9 @@ export type NavItem = Readonly<{
 // Every page that can appear in the header (order = display order)
 // 헤더에 나올 수 있는 모든 페이지 (배열 순서 = 화면 순서)
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [
-  {href: '/archive', label: 'Archive'},
-  {href: '/resume', label: 'Resume'},
-  {href: '/', label: 'Home'},
+  { href: '/archive', label: 'Archive' },
+  { href: '/resume', label: 'Resume' },
+  { href: '/', label: 'Home' },
 ];
 
 // Left-side title from the first path segment ('/archive/post' → 'Archive')

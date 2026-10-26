@@ -20,28 +20,28 @@ const TWEEN = {
   overwrite: 'auto',
 } as const;
 
-const CENTER = {xPercent: 0, yPercent: 0} as const;
+const CENTER = { xPercent: 0, yPercent: 0 } as const;
 
 // ----- Side effects: GSAP animations / 사이드 이펙트: GSAP 애니메이션 -----
 
 // Enter from outside or an empty cell: jump the frame, slide the fill in from the edge
 // 바깥이나 빈 칸에서 진입: 틀은 즉시 이동, fill은 진입한 변에서 슬라이드인
 const enterCell = (frame: HTMLElement, fill: HTMLElement, box: CellBox, edge: Edge): void => {
-  gsap.set(frame, {...box, autoAlpha: 1, overwrite: true});
-  gsap.fromTo(fill, EDGE_OFFSET[edge], {...CENTER, ...TWEEN});
+  gsap.set(frame, { ...box, autoAlpha: 1, overwrite: true });
+  gsap.fromTo(fill, EDGE_OFFSET[edge], { ...CENTER, ...TWEEN });
 };
 
 // Target cell → target cell: glide the frame, keep the fill centered
 // 대상 칸 → 대상 칸: 틀이 미끄러지듯 이동, fill은 가운데 유지
 const moveToCell = (frame: HTMLElement, fill: HTMLElement, box: CellBox): void => {
-  gsap.to(frame, {...box, ...TWEEN});
-  gsap.to(fill, {...CENTER, ...TWEEN});
+  gsap.to(frame, { ...box, ...TWEEN });
+  gsap.to(fill, { ...CENTER, ...TWEEN });
 };
 
 // Leave to an empty cell or outside: slide the fill out toward the exit edge
 // 빈 칸이나 바깥으로 나감: fill을 나간 변 쪽으로 슬라이드아웃
 const leaveCell = (fill: HTMLElement, edge: Edge): void => {
-  gsap.to(fill, {...EDGE_OFFSET[edge], ...TWEEN});
+  gsap.to(fill, { ...EDGE_OFFSET[edge], ...TWEEN });
 };
 
 // Reads the frame's current (possibly mid-tween) position
@@ -55,7 +55,7 @@ const getFramePoint = (frame: HTMLElement): Point => ({
 // Cells marked with data-hover are targets
 // 셀 사이를 이동하는 하이라이트 하나를 가진 그리드 래퍼
 // data-hover가 붙은 셀이 대상
-export default function HoverGrid({className = '', children}: Props) {
+export default function HoverGrid({ className = '', children }: Props) {
   const frameRef = useRef<HTMLSpanElement>(null);
   const fillRef = useRef<HTMLSpanElement>(null);
 

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import {parseLang, pick} from '@/lib/i18n';
-import {PROFILE} from '@/data/resume/profile';
-import {CAREERS} from '@/data/resume/careers';
-import {sortCareers} from '@/data/resume/sort';
+import { parseLang, pick } from '@/lib/i18n';
+import { PROFILE } from '@/data/resume/profile';
+import { CAREERS } from '@/data/resume/careers';
+import { sortCareers } from '@/data/resume/sort';
 import HoverGrid from '@/components/HoverGrid/HoverGrid';
 import CompanyBlock from '@/components/Career/CompanyBlock';
 import styles from './page.module.scss';
@@ -70,7 +70,7 @@ export default async function Page(props: PageProps<'/resume'>) {
       <div className={styles.dddd}>
         {/* Career: one block per company, newest first / 경력: 회사별 블록, 최신순 */}
         {SORTED_CAREERS.map((company) => (
-          <CompanyBlock key={company.id} company={company} lang={lang} />
+          <CompanyBlock key={company.id} company={company} lang={lang}/>
         ))}
       </div>
     </main>

@@ -1,4 +1,4 @@
-import type { Company, Period, Project } from './types';
+import type {Company, Period, Project} from './types';
 
 // Keys are 'YYYY.MM' strings, so plain string comparison gives date order
 // 키는 'YYYY.MM' 문자열이라 문자열 비교만으로 날짜 순서가 맞음
@@ -42,9 +42,9 @@ const latestKey = (periods: readonly Period[]): SortKey =>
 // Build a newest-first sorter from a key getter (input is never mutated)
 // 키를 꺼내는 함수로 최신순 정렬 함수를 만듦 (원본은 바꾸지 않음)
 const sortByLatest =
-  <T,>(getKey: (item: T) => SortKey) =>
-  (items: readonly T[]): readonly T[] =>
-    items.toSorted((a, b) => compareKeys(getKey(a), getKey(b)));
+  <T, >(getKey: (item: T) => SortKey) =>
+    (items: readonly T[]): readonly T[] =>
+      items.toSorted((a, b) => compareKeys(getKey(a), getKey(b)));
 
 // Projects: by their latest period
 // 프로젝트: 가장 늦은 기간 기준

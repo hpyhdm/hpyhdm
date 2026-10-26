@@ -67,7 +67,7 @@ export default async function Page(props: PageProps<'/resume'>) {
         </div>
       </dl>
 
-      <div class={styles.dddd}>
+      <div className={styles.dddd}>
         {/* Career: one block per company, newest first / 경력: 회사별 블록, 최신순 */}
         {SORTED_CAREERS.map((company) => (
           <CompanyBlock key={company.id} company={company} lang={lang} />

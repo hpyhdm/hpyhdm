@@ -1,4 +1,4 @@
-import type { Profile } from './types';
+import type {Profile} from './types';
 
 // Profile shown in the top row (ID / POSITION / MOTTO / CONTACT)
 // 상단 프로필 행에 보이는 정보 (ID / POSITION / MOTTO / CONTACT)

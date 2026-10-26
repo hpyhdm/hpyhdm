@@ -3,7 +3,7 @@ import type { Company, Period, Project } from './types';
 // Keys are 'YYYY.MM' strings, so plain string comparison gives date order
 // 키는 'YYYY.MM' 문자열이라 문자열 비교만으로 날짜 순서가 맞음
 const ONGOING_KEY = '9999.12'; // Present → always first / 진행 중 → 항상 맨 위
-const NO_DATE_KEY = '0000.00'; // maintenance or no dates → always last / 유지운영·기간 없음 → 항상 맨 아래
+const NO_DATE_KEY = '0000.00'; // no dates → always last / 기간 없음 → 항상 맨 아래
 
 // End and start keys used for ordering
 // 정렬에 쓰는 종료·시작 키
@@ -14,10 +14,10 @@ type SortKey = Readonly<{
 
 // Sort key of a single period
 // 기간 하나의 정렬 키
-const periodKey = (period: Period): SortKey =>
-  period.kind === 'maintenance'
-    ? {end: NO_DATE_KEY, start: NO_DATE_KEY}
-    : {end: period.to ?? ONGOING_KEY, start: period.from};
+const periodKey = (period: Period): SortKey => ({
+  end: period.to ?? ONGOING_KEY,
+  start: period.from,
+});
 
 // Descending comparison for 'YYYY.MM' strings (later first)
 // 'YYYY.MM' 문자열 내림차순 비교 (늦은 쪽이 앞)

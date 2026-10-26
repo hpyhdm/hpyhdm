@@ -6,7 +6,7 @@ import '../styles/globals.scss';
 
 // Browser tab title for every page / 모든 페이지의 브라우저 탭 제목
 export const metadata: Metadata = {
-  title: 'hpyhdm',
+  title: 'hpyhdm.me',
 };
 
 // Browser UI color (mobile address/status bar), same as $bg-muted in _variables.scss

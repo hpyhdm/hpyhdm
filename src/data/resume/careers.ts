@@ -26,13 +26,16 @@ export const CAREERS = [
     projects: [
       {
         id: 'esteel4u',
+        kind: 'build',
         name: {ko: '이스틸포유 기업 홈페이지 리뉴얼', en: 'Esteel4U Corporate Website Renewal'},
         url: 'https://home.esteel4u.com/',
         periods: [{kind: 'range', from: '2026.07', to: '2026.09'}],
+        focus: {ko: '관리자 직접 수정', en: 'Admin-editable'},
+        teamSize: 2,
         bullets: [
           {
-            ko: '2인 팀에서 기존 구조 안에서 메인 페이지 GSAP 인터랙션과 기업소개 페이지 개발',
-            en: 'Built the main page GSAP interactions and the company pages within an existing structure, in a 2-person team',
+            ko: '기존 구조 안에서 메인 페이지 GSAP 인터랙션과 기업소개 페이지 개발',
+            en: 'Built the main page GSAP interactions and the company pages within an existing structure',
           },
           {
             ko: '40–60대 주 사용자층을 고려해 글자 크기를 키우고, 스크롤이 길다는 피드백을 반영해 ScrollTrigger 핀 구간을 줄여 체감 스크롤 길이 단축',
@@ -46,13 +49,16 @@ export const CAREERS = [
       },
       {
         id: 'db-group-ci',
+        kind: 'build',
         name: {ko: 'DB그룹 CI 아카이브 개편', en: 'DB Group CI Archive Renewal'},
         url: 'https://ci.dbgroup.co.kr/',
         periods: [{kind: 'range', from: '2025.10', to: '2025.12'}],
+        focus: {ko: '자동화', en: 'Automation'},
+        teamSize: 2,
         bullets: [
           {
-            ko: '2인 팀에서 프론트엔드 전반을 주도, 공통 컴포넌트부터 페이지 단위까지 개발',
-            en: 'Drove most of the front-end work in a 2-person team, from shared components to full pages',
+            ko: '공통 컴포넌트부터 페이지 단위까지 프론트엔드 전반을 주도해 개발',
+            en: 'Drove most of the front-end work, from shared components to full pages',
           },
           {
             ko: '방대한 CI 자료를 일관되게 담을 수 있도록 공통 컴포넌트 재사용 구조로 설계하고, 좌측 세로형 GNB와 상단 섹션 내비게이션 레이아웃 구현',
@@ -66,13 +72,17 @@ export const CAREERS = [
       },
       {
         id: 'db-hitek',
+        kind: 'build',
         name: {ko: 'DB HiTek 리뉴얼', en: 'DB HiTek Website Renewal'},
         url: 'https://dbhitek.com/',
         periods: [{kind: 'range', from: '2025.03', to: '2025.06'}],
+        maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
+        focus: {ko: '다국어 대응', en: 'Localization'},
+        teamSize: 2,
         bullets: [
           {
-            ko: '2인 팀에서 회사소개·기술·고객지원·IR·지속가능경영 카테고리 서브 페이지 20개 개발, 기존 컴포넌트 구조에 맞춰 반복 레이아웃을 공통 컴포넌트로 추가 작성',
-            en: 'Built 20 sub-pages across Company, Technology, Customer Support, IR and Sustainability in a 2-person team, adding shared components for repeated layouts in line with the existing structure',
+            ko: '회사소개·기술·고객지원·IR·지속가능경영 카테고리 서브 페이지 20개 개발, 기존 컴포넌트 구조에 맞춰 반복 레이아웃을 공통 컴포넌트로 추가 작성',
+            en: 'Built 20 sub-pages across Company, Technology, Customer Support, IR and Sustainability, adding shared components for repeated layouts in line with the existing structure',
           },
           {
             ko: '국·영·중·일 4개 언어 대응, 언어별 텍스트 길이 차이로 생기는 레이아웃 깨짐을 보정하고 중·일문 환경에 맞는 기본 폰트 적용',
@@ -86,13 +96,17 @@ export const CAREERS = [
       },
       {
         id: 'daesang-wellife',
+        kind: 'build',
         name: {ko: '대상웰라이프', en: 'Daesang Wellife'},
         url: 'https://www.daesangwellife.com/',
         periods: [{kind: 'range', from: '2024.12', to: '2025.05'}],
+        maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
+        focus: {ko: '스타일가이드 코드화', en: 'Style guide'},
+        teamSize: 3,
         bullets: [
           {
-            ko: '디자인팀의 Figma 스타일가이드를 코드로 구현하는 작업을 처음 담당, 다른 작업자도 바로 이해할 수 있는 직관적인 클래스 네이밍으로 공통 CSS·스크립트 구성 (3인 팀)',
-            en: 'Took on translating the design team\'s Figma style guide into code for the first time, building shared CSS and scripts with intuitive class names any teammate could pick up (3-person team)',
+            ko: '디자인팀의 Figma 스타일가이드를 코드로 구현하는 작업을 처음 담당, 다른 작업자도 바로 이해할 수 있는 직관적인 클래스 네이밍으로 공통 CSS·스크립트 구성',
+            en: 'Took on translating the design team\'s Figma style guide into code for the first time, building shared CSS and scripts with intuitive class names any teammate could pick up',
           },
           {
             ko: '배경색별 테마 전환, 스크롤 방향에 따른 노출 토글, 마우스·터치 입력까지 고려한 공통 헤더 개발, 이전 프로젝트의 리사이즈 이슈를 반영해 안정성 보완',
@@ -110,12 +124,14 @@ export const CAREERS = [
       },
       {
         id: 'xi-elevator',
+        kind: 'build',
         name: {ko: '자이엘리베이터 (GS엘리베이터 구축 → CI 리뉴얼)', en: 'XI Elevator (GS Elevator Build → CI Renewal)'},
         url: 'https://www.xielevator.com/',
         periods: [
           {kind: 'range', from: '2023.09', to: '2023.12'},
           {kind: 'range', from: '2025.03', to: '2025.04'},
         ],
+        focus: {ko: '사명 변경 리뉴얼', en: 'Rebrand'},
         bullets: [
           {
             ko: '입사 직후 진행 중인 구축 프로젝트에 합류(3인), 기존 공통 컴포넌트 구조를 파악해 제품·유지보수 페이지 개발',
@@ -133,13 +149,16 @@ export const CAREERS = [
       },
       {
         id: 'samyang-ci',
+        kind: 'build',
         name: {ko: '삼양그룹 전사 CI 변경', en: 'Samyang Group CI Renewal'},
         url: 'https://www.samyang.com/',
         periods: [{kind: 'range', from: '2024.07', to: '2024.10'}],
+        focus: {ko: '12개 사이트', en: 'Multi-site'},
+        teamSize: 3,
         bullets: [
           {
-            ko: '3인 프론트엔드로 삼양홀딩스 포함 12개 계열사 사이트 CI 리뉴얼, 운영 중인 소스와 리뉴얼 CSS를 분리해 고객사 수정 사항을 보존하며 개편 병행',
-            en: 'Rebranded 12 Samyang Group sites, including the holding company, in a 3-person front-end team, isolating the new CSS from the live codebase so the client\'s ongoing edits stayed intact',
+            ko: '삼양홀딩스 포함 12개 계열사 사이트 CI 리뉴얼, 운영 중인 소스와 리뉴얼 CSS를 분리해 고객사 수정 사항을 보존하며 개편 병행',
+            en: 'Rebranded 12 Samyang Group sites, including the holding company, isolating the new CSS from the live codebase so the client\'s ongoing edits stayed intact',
           },
           {
             ko: '스타일가이드의 타이포 위계(h1–h6, 본문) 기준으로 국/영문 폰트·크기를 단계별 조정해, 일괄 치환에 따른 의도치 않은 변경 방지',
@@ -153,13 +172,16 @@ export const CAREERS = [
       },
       {
         id: 'hanatour',
+        kind: 'build',
         name: {ko: '하나투어 기업 웹사이트', en: 'Hanatour Corporate Website'},
         url: 'https://www.hanatourcompany.com/',
         periods: [{kind: 'range', from: '2024.04', to: '2024.07'}],
+        focus: {ko: '스크롤 슬라이드', en: 'Scroll slider'},
+        teamSize: 3,
         bullets: [
           {
-            ko: '3인 팀에서 사업소개 페이지 인터랙션 담당, Swiper와 GSAP ScrollTrigger를 연동한 커스텀 슬라이드 구현',
-            en: 'Built custom Swiper slides synced with GSAP ScrollTrigger for the business pages in a 3-person team',
+            ko: '사업소개 페이지 인터랙션 담당, Swiper와 GSAP ScrollTrigger를 연동한 커스텀 슬라이드 구현',
+            en: 'Built custom Swiper slides synced with GSAP ScrollTrigger for the business pages',
           },
           {
             ko: '웹/모바일별 슬라이드 동작을 분리 설계해 디바이스에 맞는 사용 흐름 제공',
@@ -169,13 +191,16 @@ export const CAREERS = [
       },
       {
         id: 'samick-thk',
+        kind: 'build',
         name: {ko: '삼익THK 통합 사이트 리뉴얼', en: 'Samick THK Integrated Site Renewal'},
         url: 'https://www.samickthk.co.kr/',
         periods: [{kind: 'range', from: '2023.12', to: '2024.05'}],
+        focus: {ko: '타임라인 인터랙션', en: 'Timeline'},
+        teamSize: 4,
         bullets: [
           {
-            ko: '4인 프론트엔드 팀에서 연혁(Heritage) 페이지 인터랙션 담당, GSAP ScrollTrigger 기반 타임라인 구현',
-            en: 'Owned the Heritage page interactions in a 4-person front-end team, building a GSAP ScrollTrigger timeline',
+            ko: '연혁(Heritage) 페이지 인터랙션 담당, GSAP ScrollTrigger 기반 타임라인 구현',
+            en: 'Owned the Heritage page interactions, building a GSAP ScrollTrigger timeline',
           },
           {
             ko: '스크롤 위치에 따른 LNB 하이라이트와 앵커 이동을 공통 함수로 묶어 재사용 가능한 구조로 작성',
@@ -185,9 +210,11 @@ export const CAREERS = [
       },
       {
         id: 'samsung-em',
+        kind: 'operations',
         name: {ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations'},
         url: 'https://www.samsungsem.com/',
-        periods: [{kind: 'maintenance'}],
+        periods: [{kind: 'range', from: '2023.09', to: null}], // since joining / 입사 때부터
+        focus: {ko: '웹접근성 인증', en: 'Accessibility'},
         bullets: [
           {
             ko: '분기별 IR·연혁·주주총회 콘텐츠 업데이트 등 운영 전반 담당, 4단계로 진행되는 주주총회 페이지·팝업을 일정별 예약 스크립트로 오픈·전환·종료',
@@ -209,13 +236,18 @@ export const CAREERS = [
             ko: '보안 VDI·수동 배포 환경에서 반복 재작업을 줄이기 위한 개선점을 제안해, 팀 공통 업무 유의사항으로 정리',
             en: 'Proposed process improvements for a secure VDI, manual-deploy environment, which became team-wide working guidelines',
           },
+          {
+            ko: '임직원 대상 사내 커뮤니티도 함께 운영하며, 칭찬 포인트 등 조건에 따라 컴포넌트를 노출·숨김 처리',
+            en: 'Also maintain an internal community platform for employees, showing and hiding components based on conditions such as recognition points',
+          },
         ],
       },
       {
         id: 'samyang-specialty',
+        kind: 'operations',
         name: {ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations'},
         url: 'https://samyangspecialty.com/',
-        periods: [{kind: 'maintenance'}],
+        periods: [{kind: 'range', from: '2023.09', to: null}], // since joining / 입사 때부터
         bullets: [
           {
             ko: '매년 전시회 페이지 제작, 신규 페이지 추가 및 콘텐츠 업데이트',
@@ -241,12 +273,14 @@ export const CAREERS = [
     projects: [
       {
         id: 'samsung-vxt',
+        kind: 'build',
         name: {ko: 'Samsung VXT CMS', en: 'Samsung VXT CMS'},
         periods: [
           {kind: 'range', from: '2024.04', to: '2024.06'},
           {kind: 'range', from: '2024.10', to: '2024.11'},
           {kind: 'range', from: '2025.06', to: '2025.08'},
         ],
+        focus: {ko: 'React UI', en: 'React'},
         bullets: [
           {
             ko: '디자인 시안을 React로 실제 화면화해, 개발팀이 본 개발 전에 UI/UX를 확인하는 기준 화면 제작',
@@ -278,6 +312,7 @@ export const CAREERS = [
     projects: [
       {
         id: 'presidential-office',
+        kind: 'build',
         name: {ko: '제20대 대통령실 웹사이트 개편', en: '20th Presidential Office Website'},
         periods: [],
         bullets: [
@@ -289,6 +324,7 @@ export const CAREERS = [
       },
       {
         id: 'cheongwadae-special',
+        kind: 'build',
         name: {ko: '제19대 청와대 특별 페이지', en: '19th Cheong Wa Dae Special Portal'},
         periods: [],
         bullets: [
@@ -300,6 +336,7 @@ export const CAREERS = [
       },
       {
         id: 'itcen-daedong',
+        kind: 'build',
         name: {ko: '아이티센그룹·대동 웹사이트', en: 'ITcen Group & Daedong Websites'},
         periods: [],
         bullets: [

@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import {parseLang, pick} from '@/lib/i18n';
 import {PROFILE} from '@/data/resume/profile';
+import {CAREERS} from '@/data/resume/careers';
+import {sortCareers} from '@/data/resume/sort';
 import HoverGrid from '@/components/HoverGrid/HoverGrid';
+import CompanyBlock from '@/components/Career/CompanyBlock';
 import styles from './page.module.scss';
 
 // External links (http/https) open in a new tab; mailto: stays as is
@@ -11,6 +14,10 @@ const isExternal = (href: string): boolean => href.startsWith('http');
 // Whole body depends on ?lang, so there is no static shell to show first
 // 본문 전체가 ?lang에 따라 달라져서 먼저 보여줄 정적 화면이 없음
 export const instant = false;
+
+// Sorted once at module level; the data never changes at runtime
+// 데이터가 런타임에 바뀌지 않으니 모듈에서 한 번만 정렬
+const SORTED_CAREERS = sortCareers(CAREERS);
 
 export default async function Page(props: PageProps<'/resume'>) {
   const lang = parseLang((await props.searchParams).lang);
@@ -59,6 +66,13 @@ export default async function Page(props: PageProps<'/resume'>) {
           </dd>
         </div>
       </dl>
+
+      <div class={styles.dddd}>
+        {/* Career: one block per company, newest first / 경력: 회사별 블록, 최신순 */}
+        {SORTED_CAREERS.map((company) => (
+          <CompanyBlock key={company.id} company={company} lang={lang} />
+        ))}
+      </div>
     </main>
   );
 }

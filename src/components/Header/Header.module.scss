@@ -32,7 +32,7 @@
   padding: 0 $cell-padding-x;
   border-right: 1px solid $border-default;
   border-bottom: 1px solid $border-default;
-  //font-family: $font-system;
+  font-family: $font-system;
   font-size: 64px;
   font-weight: 400;
   letter-spacing: -4px;
@@ -40,7 +40,7 @@
 
   @include media(false, tablet) {
     grid-column: auto;
-    padding: 0 $cell-padding-x-mobile;
+    padding: 0 $cell-padding-mobile;
     border: 0;
     font-size: 48px;
     letter-spacing: -3px;
@@ -49,6 +49,7 @@
 
 .nav {
   grid-column: 3 / -1; // the remaining 6 columns / 나머지 6칸
+  font-family: $font-sans;
 
   ul {
     height: 100%;
@@ -115,7 +116,7 @@
   // 터치에는 호버가 없으므로 처음부터 검정 + 밑줄
   @include media(false, tablet) {
     height: auto;
-    padding: 0 $cell-padding-x-mobile;
+    padding: 0 $cell-padding-mobile;
     color: $text-default;
     font-size: 16px;
     text-decoration: underline;

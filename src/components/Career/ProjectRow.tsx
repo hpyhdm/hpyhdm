@@ -19,9 +19,22 @@ export default function ProjectRow({ project, lang }: Props) {
       <div className={styles.meta}>
         {/* TODO: name (link if url), periods, Maintaining badge / 이름(url 있으면 링크), 기간, Maintaining 배지 */}
         {/* TODO: focus tag, team size / 각도 태그, 팀 규모 */}
+        <h3>
+          {project.url ? (
+            <a href={t(project.url)} target="_blank" rel="noopener noreferrer">
+              {t(project.name)}
+            </a>
+          ) : (
+            t(project.name)
+          )}
+        </h3>
+        <span>{t(project.periods)}</span>
       </div>
       <ul className={styles.bullets} role="list">
         {/* TODO: bullets / bullet 목록 */}
+        {project.bullets.map((bullet) => (
+          <li key={bullet.en}>{t(bullet)}</li>
+        ))}
       </ul>
     </li>
   );

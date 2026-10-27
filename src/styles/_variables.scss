@@ -32,13 +32,14 @@ $text-subtle: $gray-300; // header nav before hover / 호버 전 헤더 nav
 
 // Border
 $border-default: $gray-200;
-$border-strong: $gray-400;
+$border-strong: $gray-300;
 
 // =====================
 // Font
 // =====================
 $font-system: var(--font-system);
 $font-sans: var(--font-sans);
+$font-body: var(--font-body);
 $font-sniglet: var(--font-sniglet), $font-system;
 
 // =====================
@@ -54,5 +55,7 @@ $ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94); // ≈ GSAP power1.out
 // =====================
 $header-height: 100px;
 $grid-columns: 8; // site-wide column count (home uses half: 4) / 사이트 공통 열 개수 (홈은 절반인 4)
-$cell-padding-x: 6px; // inner left/right space of a grid cell / 그리드 칸 안쪽 좌우 여백
-$cell-padding-x-mobile: 12px; // below tablet / tablet 미만
+$cell-padding-x: 8px; // inner left/right space of a grid cell / 그리드 칸 안쪽 좌우 여백
+$cell-padding-y: 16px; // inner top/bottom space of a grid cell / 그리드 칸 안쪽 상하 여백
+$cell-padding-mobile: 12px; // below tablet / tablet 미만
+$cell-gap: 8px; // space between elements inside a cell / 칸 안에서 요소 사이 간격

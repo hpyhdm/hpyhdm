@@ -27,7 +27,7 @@ export type Project = Readonly<{
   id: string;
   kind: ProjectKind;            // build or operations / 구축 또는 운영
   name: Localized;
-  url?: string;
+  url?: Localized;             // site address per language / 언어별 사이트 주소
   periods: readonly Period[];   // build stints / 구축 기간 (여러 번 허용)
   maintaining?: boolean;        // still maintained after launch / 오픈 후 현재도 유지운영 중
   focus?: Localized;            // what sets this project apart, shown as a tag / 이 프로젝트만의 각도 (태그로 표시)

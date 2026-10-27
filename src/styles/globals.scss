@@ -8,12 +8,14 @@
   'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic',
   'Noto Sans KR', sans-serif;
   --font-sans: var(--font-suit), var(--font-system);
+  --font-body: var(--font-suit), var(--font-system);
+  //--font-body: 'Pretendard Variable', var(--font-system);
 }
 
-// Default body: SUIT font (system fallback) and the site background
-// 기본 body: SUIT 폰트 (실패 시 시스템 폰트)와 사이트 배경
+// Default body: Pretendard font (system fallback) and the site background
+// 기본 body: Pretendard 폰트 (실패 시 시스템 폰트)와 사이트 배경
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.875rem; // 14px at browser default / 브라우저 기본 설정 기준 14px
   letter-spacing: -0.02rem;
   background: $bg-muted;

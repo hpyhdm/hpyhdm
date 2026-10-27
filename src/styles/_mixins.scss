@@ -48,3 +48,13 @@ $breakpoints: (
     }
   }
 }
+
+// Grid cell: the box that holds content gets the padding; wrappers do not
+// 그리드 칸: 내용이 직접 들어 있는 칸에만 여백을 주고, 감싸는 요소에는 주지 않음
+@mixin cell {
+  padding: $cell-padding-y $cell-padding-x;
+
+  @include media(false, tablet) {
+    padding: $cell-padding-mobile;
+  }
+}

@@ -14,7 +14,7 @@ export const CAREERS = [
   {
     id: 'uber-creative',
     name: { ko: '더위버크리에이티브', en: 'The Uber Creative' },
-    role: { ko: '프론트엔드 개발자', en: 'Frontend Developer' },
+    role: 'Frontend Developer',
     team: { ko: 'UI개발팀', en: 'UI Development Team' },
     location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
@@ -262,7 +262,7 @@ export const CAREERS = [
   {
     id: 'freelance',
     name: { ko: '프리랜서', en: 'Freelance' },
-    role: { ko: '프론트엔드 개발자', en: 'Frontend Developer' },
+    role: 'Frontend Developer',
     location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'freelance',
     period: { kind: 'range', from: '2024.04', to: '2025.08' },
@@ -299,7 +299,7 @@ export const CAREERS = [
   {
     id: 'wever-cns',
     name: { ko: '(주)웨버씨엔에스', en: 'Wever CNS' },
-    role: { ko: '웹 퍼블리셔', en: 'UI Developer' }, // 'publisher' reads as content owner in English / 영어권에서 publisher는 콘텐츠 발행자로 읽힘
+    role: 'UI Developer', // was 웹 퍼블리셔; 'publisher' reads as content owner in English / 이전 웹 퍼블리셔, 영어권에서 publisher는 콘텐츠 발행자로 읽힘
     location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
     period: { kind: 'range', from: '2021.12', to: '2023.02' },

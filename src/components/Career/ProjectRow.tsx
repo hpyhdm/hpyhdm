@@ -28,7 +28,9 @@ export default function ProjectRow({ project, lang }: Props) {
             t(project.name)
           )}
         </h3>
-        <span>{t(project.periods)}</span>
+        {formatPeriods(lang)(project.periods).map((period) => (
+          <span key={period}>{period}</span>
+        ))}
       </div>
       <ul className={styles.bullets} role="list">
         {/* TODO: bullets / bullet 목록 */}

@@ -25,7 +25,7 @@ export default function CompanyBlock({ company, lang }: Props) {
         {/* TODO: name, team, period (sticky) / 회사명, 팀, 재직 기간 (sticky) */}
         <div className={styles.sticky}>
           <h2>{t(company.name)}</h2>
-          <span className={styles.role}>{t(company.role)}</span>
+          <span className={styles.role} lang="en">{company.role}</span>
           <span className={styles.period}>{formatPeriod(lang)(company.period)}</span>
         </div>
       </header>

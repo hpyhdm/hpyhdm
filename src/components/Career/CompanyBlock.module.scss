@@ -4,6 +4,7 @@
 .company {
   @include subgrid-row; // 페이지 8열을 그대로 이어받음
   border-bottom: 1px solid $border-default;
+  padding: 0 0 40px;
 }
 
 .info {

@@ -42,7 +42,7 @@
 
   li {
     position: relative;
-    width: 50%;
+    max-width: 72ch; // comfortable line length / 읽기 편한 한 줄 길이
     padding-left: 12px;
     font-size: 15px;
     line-height: 1.2;
@@ -56,12 +56,6 @@
       position: absolute;
       top: 0;
       left: 0;
-    }
-  }
-
-  @include media(false, tablet) {
-    li {
-      width: 100%;
     }
   }
 }

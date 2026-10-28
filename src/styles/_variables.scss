@@ -10,6 +10,7 @@ $gray-200: #e5e5e5;
 $gray-300: #d4d4d4;
 $gray-400: #a3a3a3;
 $gray-500: #737373;
+$gray-700: #404040;
 $gray-900: #101010;
 
 // =====================
@@ -26,6 +27,7 @@ $bg-hover-subtle: $gray-120; // lighter hover for sub pages / 서브 페이지�
 
 // Text
 $text-default: $gray-900;
+$text-secondary: $gray-700; // long body text / 긴 본문 텍스트
 $text-muted: $gray-500;
 $text-disabled: $gray-400;
 $text-subtle: $gray-300; // header nav before hover / 호버 전 헤더 nav
@@ -41,6 +43,18 @@ $font-system: var(--font-system);
 $font-sans: var(--font-sans);
 $font-body: var(--font-body);
 $font-sniglet: var(--font-sniglet), $font-system;
+
+// =====================
+// Typography
+// Pick one of these steps instead of a raw px value
+// 크기는 px를 직접 쓰지 말고 아래 단계 중 하나를 고름
+// =====================
+$font-size-xs: 12px; // labels, dates / 라벨, 날짜
+$font-size-sm: 13px; // bullets / 설명
+$font-size-md: 14px; // brief, profile values, role / 소개, 프로필 값, 직무
+$font-size-lg: 15px; // project title / 프로젝트 제목
+$font-size-xl: 17px; // company name / 회사명
+$text-max-width: 82ch; // comfortable line length for long text / 긴 문장의 읽기 편한 한 줄 길이
 
 // =====================
 // Motion
@@ -59,3 +73,4 @@ $cell-padding-x: 8px; // inner left/right space of a grid cell / 그리드 칸 �
 $cell-padding-y: 16px; // inner top/bottom space of a grid cell / 그리드 칸 안쪽 상하 여백
 $cell-padding-mobile: 12px; // below tablet / tablet 미만
 $cell-gap: 8px; // space between elements inside a cell / 칸 안에서 요소 사이 간격
+$content-max-width: 1440px; // sub page max width (home is full) / 서브 페이지 최대 너비 (홈은 전체)

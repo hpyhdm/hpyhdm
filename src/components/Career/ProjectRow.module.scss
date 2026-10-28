@@ -3,7 +3,7 @@
 
 .row {
   @include subgrid-row;
-  border-bottom: 1px solid $border-strong;
+  border-bottom: 1px dotted $border-strong;
 
   &:last-of-type {
     border: 0;
@@ -15,7 +15,8 @@
   grid-column: 1 / 2;
 
   h3 {
-    font-size: 16px;
+    color: $text-default;
+    font-size: $font-size-lg;
     font-weight: 600;
     margin-bottom: 8px;
 
@@ -30,10 +31,36 @@
     }
   }
 
-  span {
-    display: block;
-    font-size: 13px;
-  }
+}
+
+// Periods stack in the first column; the badge sits in the second column of the first line
+// 기간은 첫 번째 열에 쌓이고, 배지는 첫 줄의 두 번째 열에 위치
+.dates {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.period {
+  grid-column: 1;
+  color: $text-muted;
+  font-size: $font-size-xs;
+}
+
+// Outlined, so it never competes with the filled focus tag
+// 테두리만 있는 배지라 배경색이 있는 각도 태그와 겹쳐 보이지 않음
+.badge {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 8px;
+  border: 1px solid $text-disabled;
+  border-radius: 99px;
+  color: $text-disabled;
+  font-size: 10px;
+  line-height: 1.6;
+  font-weight: 700;
 }
 
 .bullets {
@@ -42,10 +69,12 @@
 
   li {
     position: relative;
-    max-width: 72ch; // comfortable line length / 읽기 편한 한 줄 길이
+    max-width: $text-max-width;
     padding-left: 12px;
-    font-size: 15px;
+    font-size: $font-size-sm;
+    font-weight: 500;
     line-height: 1.2;
+    color: $text-secondary;
 
     & + li {
       margin-top: 24px;

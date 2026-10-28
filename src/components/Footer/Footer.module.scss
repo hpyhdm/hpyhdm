@@ -1,0 +1,10 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  @include cell;
+  margin-top: auto; // push to the bottom of .wrap / .wrap 맨 아래로 밀어냄
+  border-top: 1px solid $border-default;
+  color: $text-muted;
+  font-size: 13px;
+}

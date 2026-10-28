@@ -2,6 +2,7 @@ import { pick } from '@/lib/i18n';
 import type { Lang } from '@/lib/i18n';
 import { formatPeriods, formatTeamSize } from '@/data/resume/format';
 import type { Project } from '@/data/resume/types';
+import { MAINTAINING_LABEL } from './career.utils';
 import styles from './ProjectRow.module.scss';
 
 type Props = Readonly<{
@@ -17,7 +18,6 @@ export default function ProjectRow({ project, lang }: Props) {
   return (
     <li className={styles.row}>
       <div className={styles.meta}>
-        {/* TODO: name (link if url), periods, Maintaining badge / 이름(url 있으면 링크), 기간, Maintaining 배지 */}
         {/* TODO: focus tag, team size / 각도 태그, 팀 규모 */}
         <h3>
           {project.url ? (
@@ -28,9 +28,15 @@ export default function ProjectRow({ project, lang }: Props) {
             t(project.name)
           )}
         </h3>
-        {formatPeriods(lang)(project.periods).map((period) => (
-          <span key={period}>{period}</span>
-        ))}
+        {/* Build periods, with the badge beside the first line / 구축 기간, 배지는 첫 줄 옆에 */}
+        <div className={styles.dates}>
+          {formatPeriods(lang)(project.periods).map((period) => (
+            <span key={period} className={styles.period}>{period}</span>
+          ))}
+          {project.maintaining && (
+            <span className={styles.badge}>{t(MAINTAINING_LABEL)}</span>
+          )}
+        </div>
       </div>
       <ul className={styles.bullets} role="list">
         {/* TODO: bullets / bullet 목록 */}

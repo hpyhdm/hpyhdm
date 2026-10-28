@@ -1,0 +1,7 @@
+@use '../../styles/variables' as *;
+
+// Sub pages: centered, capped width / 서브 페이지: 가운데 정렬, 최대 너비 제한
+.container {
+  max-width: $content-max-width;
+  border-right: 1px solid $border-default;
+}

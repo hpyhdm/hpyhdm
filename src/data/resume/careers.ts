@@ -1,11 +1,4 @@
-import type { Company, Localized } from './types';
-
-// Shared skills, stated once instead of on every project
-// 모든 프로젝트에 반복하지 않고 한 번만 적는 공통 기본기
-export const BASELINE = {
-  ko: '모든 프로젝트에서 반응형·크로스브라우징, 웹접근성(WCAG) 준수 마크업, GSAP 기반 인터랙션을 기본으로 작업합니다.',
-  en: 'Responsive, cross-browser layouts, accessible (WCAG) markup and GSAP-based interactions are the baseline on every project.',
-} as const satisfies Localized;
+import type { Company } from './types';
 
 // Career history (display order is decided by sort.ts)
 // 경력 목록 (화면 순서는 sort.ts에서 정렬)
@@ -15,13 +8,12 @@ export const CAREERS = [
     id: 'uber-creative',
     name: { ko: '더위버크리에이티브', en: 'The Uber Creative' },
     role: 'Frontend Developer',
-    team: { ko: 'UI개발팀', en: 'UI Development Team' },
     location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
     period: { kind: 'range', from: '2023.09', to: null }, // still working here / 재직 중
     brief: {
-      ko: '디지털 에이전시에서 프론트엔드 개발자로 근무하며 기업 웹사이트 구축과 유지운영을 담당하고 있습니다.',
-      en: 'Working as a Frontend Developer at a digital agency, responsible for corporate website development and maintenance.',
+      ko: '기업 웹사이트를 구축하고 운영하는 디지털 에이전시로, 신규 구축과 리뉴얼, 장기 운영을 함께 맡고 있습니다.',
+      en: 'A digital agency building and running corporate websites. I work across new builds, renewals and long-term site operations.',
     },
     projects: [
       {
@@ -34,16 +26,12 @@ export const CAREERS = [
         teamSize: 2,
         bullets: [
           {
-            ko: '기존 구조 안에서 메인 페이지 GSAP 인터랙션과 기업소개 페이지 개발',
-            en: 'Built the main page GSAP interactions and the company pages within an existing structure',
-          },
-          {
-            ko: '40–60대 주 사용자층을 고려해 글자 크기를 키우고, 스크롤이 길다는 피드백을 반영해 ScrollTrigger 핀 구간을 줄여 체감 스크롤 길이 단축',
-            en: 'Enlarged type for a 40–60 primary audience and shortened ScrollTrigger pin durations after feedback that scrolling felt too long',
-          },
-          {
             ko: '자주 바뀌는 키비주얼·연혁을 관리자에서 직접 수정할 수 있도록 마크업·스크립트를 작성해, 오픈 후 개발 요청 없이 고객사가 콘텐츠 운영',
             en: 'Wrote markup and scripts that let the client edit the key visual and company history from the admin, so content runs without developer requests after launch',
+          },
+          {
+            ko: '기존 구조 안에서 메인 페이지 GSAP 인터랙션과 기업소개 페이지를 개발하고, 스크롤이 길다는 피드백을 반영해 ScrollTrigger 핀 구간을 조정',
+            en: 'Built the main page GSAP interactions and the company pages within an existing structure, then tuned ScrollTrigger pin lengths after feedback that scrolling felt too long',
           },
         ],
       },
@@ -57,16 +45,16 @@ export const CAREERS = [
         teamSize: 2,
         bullets: [
           {
+            ko: '섹션 제목에서 상단 LNB를, GNB 메뉴에서 하단 배너 링크를 자동 생성하도록 스크립트화해, 콘텐츠만 수정하면 내비게이션이 함께 갱신되는 구조로 구성',
+            en: 'Scripted the in-page LNB to build from section headings and footer banners from the GNB menu, so navigation updates automatically whenever content changes',
+          },
+          {
             ko: '공통 컴포넌트부터 페이지 단위까지 프론트엔드 전반을 주도해 개발',
             en: 'Drove most of the front-end work, from shared components to full pages',
           },
           {
             ko: '방대한 CI 자료를 일관되게 담을 수 있도록 공통 컴포넌트 재사용 구조로 설계하고, 좌측 세로형 GNB와 상단 섹션 내비게이션 레이아웃 구현',
             en: 'Structured a reusable component system to present a large volume of CI assets consistently, with a left-side vertical GNB and in-page section navigation',
-          },
-          {
-            ko: '섹션 제목에서 상단 LNB를, GNB 메뉴에서 하단 배너 링크를 자동 생성하도록 스크립트화해, 콘텐츠만 수정하면 내비게이션이 함께 갱신되는 구조로 구성',
-            en: 'Scripted the in-page LNB to build from section headings and footer banners from the GNB menu, so navigation updates automatically whenever content changes',
           },
         ],
       },
@@ -81,12 +69,12 @@ export const CAREERS = [
         teamSize: 2,
         bullets: [
           {
-            ko: '회사소개·기술·고객지원·IR·지속가능경영 카테고리 서브 페이지 20개 개발, 기존 컴포넌트 구조에 맞춰 반복 레이아웃을 공통 컴포넌트로 추가 작성',
-            en: 'Built 20 sub-pages across Company, Technology, Customer Support, IR and Sustainability, adding shared components for repeated layouts in line with the existing structure',
-          },
-          {
             ko: '국·영·중·일 4개 언어 대응, 언어별 텍스트 길이 차이로 생기는 레이아웃 깨짐을 보정하고 중·일문 환경에 맞는 기본 폰트 적용',
             en: 'Localized for KR/EN/CN/JP, fixing layout breaks caused by text-length differences and applying default fonts suited to Chinese and Japanese environments',
+          },
+          {
+            ko: '회사소개·기술·고객지원·IR·지속가능경영 카테고리 서브 페이지 20개 개발, 기존 컴포넌트 구조에 맞춰 반복 레이아웃을 공통 컴포넌트로 추가 작성',
+            en: 'Built 20 sub-pages across Company, Technology, Customer Support, IR and Sustainability, adding shared components for repeated layouts in line with the existing structure',
           },
           {
             ko: '회사소개·기술 개요 페이지 GSAP 인터랙션 구현, 오픈 이후 유지운영 단계에서 신규 페이지 추가 제작',
@@ -125,7 +113,7 @@ export const CAREERS = [
       {
         id: 'xi-elevator',
         kind: 'build',
-        name: { ko: '자이엘리베이터 (GS엘리베이터 구축 → CI 리뉴얼)', en: 'XI Elevator (GS Elevator Build → CI Renewal)' },
+        name: { ko: '자이엘리베이터', en: 'XI Elevator' },
         url: { ko: 'https://www.xielevator.com/', en: 'https://www.xielevator.com/en' },
         periods: [
           { kind: 'range', from: '2023.09', to: '2023.12' },
@@ -217,20 +205,16 @@ export const CAREERS = [
         focus: { ko: '웹접근성 인증', en: 'Accessibility' },
         bullets: [
           {
-            ko: '분기별 IR·연혁·주주총회 콘텐츠 업데이트 등 운영 전반 담당, 4단계로 진행되는 주주총회 페이지·팝업을 일정별 예약 스크립트로 오픈·전환·종료',
-            en: 'Ran day-to-day operations including quarterly IR, history and AGM updates, using scheduled scripts to open, switch and close AGM pages and pop-ups across a four-stage rollout',
+            ko: '매년 WCAG 2.1 AA 기준 웹접근성 인증을 갱신하며, 추가·수정되는 페이지를 접근성 마크업 기준에 맞춰 작성',
+            en: 'Kept the site\'s WCAG 2.1 AA accessibility certification renewed every year, writing new and updated pages to accessible markup standards',
           },
           {
             ko: '매년 GNB 카테고리 단위 리뉴얼(지속가능경영, PS/CL 기술 리소스 사이트 등)에서 톤앤매너와 공통 컴포넌트를 정비하고 운영 버전과 충돌 없이 반영, 단일 sub.css를 분리해 유지보수 구조 개선',
             en: 'Led yearly section redesigns by GNB category (Sustainability, PS/CL technical resource sites and more), refreshing tone and shared components without conflicting with the live site, and split a single sub.css into modular files for easier maintenance',
           },
           {
-            ko: '매년 WCAG 2.1 AA 기준 웹접근성 인증을 갱신하며, 추가·수정되는 페이지를 접근성 마크업 기준에 맞춰 작성',
-            en: 'Kept the site\'s WCAG 2.1 AA accessibility certification renewed every year, writing new and updated pages to accessible markup standards',
-          },
-          {
-            ko: '월간 정기·제품 뉴스레터 제작·발송, 연례 리뉴얼 시 메일 클라이언트별 제약을 고객사에 설명하고 대안을 제시해 디자인과 호환성 사이를 조율',
-            en: 'Produced monthly corporate and product newsletters, and in annual redesigns explained email-client limits to the client and proposed alternatives to balance design and compatibility',
+            ko: '분기별 IR·연혁·주주총회 콘텐츠 업데이트 등 운영 전반 담당, 4단계로 진행되는 주주총회 페이지·팝업을 일정별 예약 스크립트로 오픈·전환·종료',
+            en: 'Ran day-to-day operations including quarterly IR, history and AGM updates, using scheduled scripts to open, switch and close AGM pages and pop-ups across a four-stage rollout',
           },
           {
             ko: '보안 VDI·수동 배포 환경에서 반복 재작업을 줄이기 위한 개선점을 제안해, 팀 공통 업무 유의사항으로 정리',
@@ -239,6 +223,10 @@ export const CAREERS = [
           {
             ko: '임직원 대상 사내 커뮤니티도 함께 운영하며, 칭찬 포인트 등 조건에 따라 컴포넌트를 노출·숨김 처리',
             en: 'Also maintain an internal community platform for employees, showing and hiding components based on conditions such as recognition points',
+          },
+          {
+            ko: '연례 뉴스레터 리뉴얼에서 메일 클라이언트별 렌더링 제약을 고객사에 설명하고 대안을 제시해 디자인과 호환성을 조율, 월간 정기·제품 뉴스레터 제작',
+            en: 'Explained email-client rendering limits to the client during annual newsletter redesigns and proposed alternatives that balanced design with compatibility, alongside producing monthly newsletters',
           },
         ],
       },
@@ -295,26 +283,24 @@ export const CAREERS = [
     ],
   },
 
-  // ───────────────────────── Wever CNS / 위버CNS ─────────────────────────
+  // ───────────────────────── Wever CNS / 웨버CNS ─────────────────────────
   {
     id: 'wever-cns',
-    name: { ko: '(주)웨버씨엔에스', en: 'Wever CNS' },
+    name: { ko: '웨버CNS', en: 'Wever CNS' },
     role: 'UI Developer', // was 웹 퍼블리셔; 'publisher' reads as content owner in English / 이전 웹 퍼블리셔, 영어권에서 publisher는 콘텐츠 발행자로 읽힘
     location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
     employment: 'full-time',
     period: { kind: 'range', from: '2021.12', to: '2023.02' },
     brief: {
-      ko: '정부기관·기업 웹사이트 구축 에이전시에서 퍼블리셔로 근무하며 대규모 공공 프로젝트와 기업 홈페이지 구축에 참여했습니다.',
-      en: 'Worked as a web publisher at an agency building government and corporate websites, contributing to large-scale public projects and corporate sites.',
+      ko: '정부기관과 기업 웹사이트를 구축하는 에이전시로, 대규모 공공 프로젝트와 기업 홈페이지 구축에 참여했습니다.',
+      en: 'An agency building government and corporate websites, where I worked on large-scale public projects and corporate sites.',
     },
-    // No project dates in the source, so periods are empty
-    // 원본에 프로젝트별 기간이 없어서 periods는 빈 배열
     projects: [
       {
         id: 'presidential-office',
         kind: 'build',
         name: { ko: '제20대 대통령실 웹사이트 개편', en: '20th Presidential Office Website' },
-        periods: [],
+        periods: [{ kind: 'range', from: '2022.07', to: '2022.12' }],
         bullets: [
           {
             ko: '국·영문 공식 홈페이지 구축 참여, 반응형 웹 및 웹접근성 인증 획득',
@@ -325,8 +311,8 @@ export const CAREERS = [
       {
         id: 'cheongwadae-special',
         kind: 'build',
-        name: { ko: '제19대 청와대 특별 페이지', en: '19th Cheong Wa Dae Special Portal' },
-        periods: [],
+        name: { ko: '제19대 청와대 특별 페이지', en: 'Cheong Wa Dae (Blue House) Special Portal, 19th Administration' },
+        periods: [{ kind: 'range', from: '2021.12', to: '2022.05' }],
         bullets: [
           {
             ko: '100여 개 국정과제 데이터를 API로 받아 페이지에 표시하는 특별 페이지 구축 참여',
@@ -338,7 +324,7 @@ export const CAREERS = [
         id: 'itcen-daedong',
         kind: 'build',
         name: { ko: '아이티센그룹·대동 웹사이트', en: 'ITcen Group & Daedong Websites' },
-        periods: [],
+        periods: [{ kind: 'range', from: '2021.12', to: '2023.02' }],
         bullets: [
           {
             ko: '아이티센그룹 계열사 홈페이지 구축 및 유지보수, 대동 홈페이지 유지보수',

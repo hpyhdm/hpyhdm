@@ -41,7 +41,6 @@ export type Company = Readonly<{
   id: string;
   name: Localized;
   role: string;                 // job title, always in English / 직함 (언어와 상관없이 영어)
-  team?: Localized;             // team name / 팀명
   location: Localized;          // work location / 근무지
   employment: Employment;       // full-time or freelance / 정규직 또는 프리랜서
   period: Period;               // employment period / 재직 기간

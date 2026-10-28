@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-// import { Sniglet } from 'next/font/google';
+import { Google_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
-// Pretendard dynamic subset: only the glyph chunks used on the page are downloaded
-// Pretendard 다이나믹 서브셋: 페이지에 쓰인 글자 조각만 다운로드
-import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+// import { Sniglet } from 'next/font/google';
 import '../styles/globals.scss';
+import styles from './layout.module.scss';
+import Footer from '@/components/Footer/Footer';
 
 // Browser tab title for every page / 모든 페이지의 브라우저 탭 제목
 export const metadata: Metadata = {
@@ -32,10 +32,22 @@ const suit = localFont({
   variable: '--font-suit',
 });
 
+// Body Latin font (variable 400–700, OFL), used with SUIT in --font-body
+// 본문 영문 폰트 (가변 400~700, OFL), --font-body에서 SUIT와 함께 사용
+const googleSans = Google_Sans({
+  subsets: ['latin'],
+  variable: '--font-google-sans',
+});
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={suit.variable}>
-    <body>{children}</body>
+    <html lang="en" className={`${suit.variable} ${googleSans.variable}`}>
+    <body>
+      <div className={styles.wrap}>
+        {children}
+        <Footer/>
+      </div>
+    </body>
     </html>
   );
 }

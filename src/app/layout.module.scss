@@ -1,0 +1,7 @@
+// Full-height column so the footer sits at the bottom on short pages
+// 내용이 짧은 페이지에서도 푸터가 맨 아래에 오도록 세로 기둥 구조
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}

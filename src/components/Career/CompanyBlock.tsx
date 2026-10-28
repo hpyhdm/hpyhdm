@@ -1,10 +1,9 @@
 import { pick } from '@/lib/i18n';
 import type { Lang } from '@/lib/i18n';
-import { BASELINE } from '@/data/resume/careers';
 import { formatPeriod } from '@/data/resume/format';
 import type { Company } from '@/data/resume/types';
-import ProjectRow from './ProjectRow';
-import { byKind, OPERATIONS_LABEL } from './career.utils';
+import ProjectGroup from './ProjectGroup';
+import { BUILDS_LABEL, byKind, OPERATIONS_LABEL } from './career.utils';
 import styles from './CompanyBlock.module.scss';
 
 type Props = Readonly<{
@@ -18,11 +17,11 @@ export default function CompanyBlock({ company, lang }: Props) {
   const t = pick(lang);
   const builds = byKind('build')(company.projects);
   const operations = byKind('operations')(company.projects);
+  const hasOperations = operations.length > 0;
 
   return (
     <section className={styles.company}>
       <header className={styles.info}>
-        {/* TODO: name, team, period (sticky) / 회사명, 팀, 재직 기간 (sticky) */}
         <div className={styles.sticky}>
           <h2>{t(company.name)}</h2>
           <span className={styles.role} lang="en">{company.role}</span>
@@ -30,17 +29,17 @@ export default function CompanyBlock({ company, lang }: Props) {
         </div>
       </header>
       <div className={styles.body}>
-        {/* TODO: brief, BASELINE / 한 줄 소개, 공통 기본기 */}
         {company.brief && (
           <p className={styles.brief}>{t(company.brief)}</p>
         )}
-        <ul className={styles.projects} role="list">
-          {builds.map((project) => (
-            <ProjectRow key={project.id} project={project} lang={lang}/>
-          ))}
-        </ul>
-        {/* TODO: render only when operations.length > 0 / operations가 있을 때만 */}
-        {/* OPERATIONS_LABEL heading + ProjectRow list / 소제목 + ProjectRow 목록 */}
+        <ProjectGroup
+          projects={builds}
+          lang={lang}
+          label={hasOperations ? t(BUILDS_LABEL) : undefined}
+        />
+        {hasOperations && (
+          <ProjectGroup projects={operations} lang={lang} label={t(OPERATIONS_LABEL)}/>
+        )}
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ export const sortCompanies = sortByLatest((company: Company) => periodKey(compan
 
 // Companies newest first, with each company's projects also sorted
 // 회사를 최신순으로, 각 회사의 프로젝트도 함께 정렬
-export const sortCareers = (companies: readonly Company[]): readonly Company[] =>
+export const sortExperience = (companies: readonly Company[]): readonly Company[] =>
   sortCompanies(companies).map((company) => ({
     ...company,
     projects: sortProjects(company.projects),

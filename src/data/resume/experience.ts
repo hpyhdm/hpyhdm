@@ -1,8 +1,8 @@
 import type { Company } from './types';
 
-// Career history (display order is decided by sort.ts)
+// Work experience (display order is decided by sort.ts)
 // 경력 목록 (화면 순서는 sort.ts에서 정렬)
-export const CAREERS = [
+export const EXPERIENCE = [
   // ───────────────────────── The Uber Creative / 더위버크리에이티브 ─────────────────────────
   {
     id: 'uber-creative',
@@ -195,8 +195,8 @@ export const CAREERS = [
         teamSize: 3,
         bullets: [
           {
-            ko: '매년 WCAG 2.1 AA 기준 웹접근성 인증을 갱신하며, 추가·수정되는 페이지를 접근성 마크업 기준에 맞춰 작성',
-            en: 'Kept the site\'s WCAG 2.1 AA accessibility certification renewed every year, writing new and updated pages to accessible markup standards',
+            ko: '매년 웹 접근성 품질인증(KWCAG 2.2) 재심사에 대응해 인증을 갱신하고, 새로 추가·개편되는 페이지도 접근성 기준에 맞게 제작해 인증 상태를 유지',
+            en: 'Renewed the site\'s national web accessibility certification through yearly audits (KWCAG 2.2, based on WCAG 2.1), building new and redesigned pages to accessibility standards so the certification never lapsed',
           },
           {
             ko: '매년 GNB 카테고리 단위 리뉴얼(지속가능경영, PS/CL 기술 리소스 사이트 등)에서 톤앤매너와 공통 컴포넌트를 정비하고 운영 버전과 충돌 없이 반영, 단일 sub.css를 분리해 유지보수 구조 개선',

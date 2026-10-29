@@ -17,7 +17,7 @@ export const PROFILE = {
     { label: 'Languages', items: ['HTML', 'CSS/SCSS', 'JavaScript', 'TypeScript'] },
     { label: 'Frameworks & Libraries', items: ['React', 'Next.js', 'jQuery'] },
     { label: 'Interaction', items: ['GSAP', 'ScrollTrigger', 'Swiper', 'Lottie'] },
-    { label: 'Accessibility', items: ['WCAG 2.1 AA'] },
+    { label: 'Accessibility', items: ['WCAG 2.1', 'KWCAG 2.2'] },
     { label: 'Tools', items: ['Git', 'Figma'] },
   ],
 } as const satisfies Profile;

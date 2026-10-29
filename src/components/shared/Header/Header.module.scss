@@ -33,17 +33,15 @@
   border-right: 1px solid $border-default;
   border-bottom: 1px solid $border-default;
   font-family: $font-system;
-  font-size: 64px;
+  font-size: $font-size-display;
   font-weight: 400;
-  letter-spacing: -4px;
+  letter-spacing: $letter-spacing-display;
   line-height: 1;
 
   @include media(false, tablet) {
     grid-column: auto;
     padding: 0 $cell-padding-mobile;
     border: 0;
-    font-size: 48px;
-    letter-spacing: -3px;
   }
 }
 
@@ -93,9 +91,9 @@
   height: 100%;
   padding: 0 $cell-padding-x;
   color: $text-subtle;
-  font-size: 32px;
+  font-size: 2rem; // 32px
   line-height: 1;
-  letter-spacing: -2px;
+  letter-spacing: $letter-spacing-display;
   font-weight: 500;
   transition: color $duration-hover $ease-out;
 
@@ -118,7 +116,7 @@
     height: auto;
     padding: 0 $cell-padding-mobile;
     color: $text-default;
-    font-size: 16px;
+    font-size: 1rem; // 16px
     text-decoration: underline;
     letter-spacing: -0.02rem;
   }

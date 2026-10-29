@@ -3,7 +3,7 @@ import type { Lang } from '@/lib/i18n';
 import { formatPeriod } from '@/data/resume/format';
 import type { Company } from '@/data/resume/types';
 import ProjectGroup from './ProjectGroup';
-import { BUILDS_LABEL, byKind, OPERATIONS_LABEL } from './career.utils';
+import { BUILDS_LABEL, byKind, OPERATIONS_LABEL } from './experience.utils';
 import styles from './CompanyBlock.module.scss';
 
 type Props = Readonly<{
@@ -23,7 +23,7 @@ export default function CompanyBlock({ company, lang }: Props) {
     <section className={styles.company}>
       <header className={styles.info}>
         <div className={styles.sticky}>
-          <h2>{t(company.name)}</h2>
+          <h3>{t(company.name)}</h3>
           <span className={styles.role} lang="en">{company.role}</span>
           <span className={styles.period}>{formatPeriod(lang)(company.period)}</span>
         </div>

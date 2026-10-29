@@ -49,11 +49,26 @@ $font-sniglet: var(--font-sniglet), $font-system;
 // Pick one of these steps instead of a raw px value
 // 크기는 px를 직접 쓰지 말고 아래 단계 중 하나를 고름
 // =====================
-$font-size-xs: 12px; // labels, dates / 라벨, 날짜
-$font-size-sm: 13px; // bullets / 설명
-$font-size-md: 14px; // brief, profile values, role / 소개, 프로필 값, 직무
-$font-size-lg: 15px; // project title / 프로젝트 제목
-$font-size-xl: 17px; // company name / 회사명
+// rem follows the user's browser font setting (1rem = 16px at default)
+// rem은 사용자의 브라우저 글꼴 설정을 따름 (기본 설정에서 1rem = 16px)
+$font-size-2xs: 0.625rem; // 10px — badges / 배지
+$font-size-xs: 0.75rem; // 12px — labels, dates / 라벨, 날짜
+$font-size-sm: 0.8125rem; // 13px — bullets, footer / 설명, 푸터
+$font-size-md: 0.875rem; // 14px — brief, profile values, role / 소개, 프로필 값, 직무
+$font-size-lg: 0.9375rem; // 15px — project title / 프로젝트 제목
+$font-size-base: 1rem; // 16px — resume nav cells / 이력서 내비 칸
+$font-size-xl: 1.0625rem; // 17px — company name / 회사명
+
+// Fluid display sizes: min below tablet, grows until 1440px ($content-max-width), then stops
+// 유동 디스플레이 크기: tablet 미만은 최소값, 1440px($content-max-width)까지 커지고 이후 고정
+// rem + vw mix keeps it zoomable / rem + vw를 섞어서 브라우저 확대 시에도 커지도록
+$font-size-display: clamp(3rem, 1.857rem + 2.381vw, 4rem); // 48px → 64px — site title / 사이트 타이틀
+$font-size-display-sm: clamp(2.5rem, 1.929rem + 1.19vw, 3rem); // 40px → 48px — home grid links / 홈 그리드 링크
+
+// Tight tracking for display text, scales with font size (= -4px at 64px)
+// 디스플레이 텍스트의 좁은 자간, 글자 크기에 비례 (64px일 때 -4px)
+$letter-spacing-display: -0.0625em;
+
 $text-max-width: 82ch; // comfortable line length for long text / 긴 문장의 읽기 편한 한 줄 길이
 
 // =====================

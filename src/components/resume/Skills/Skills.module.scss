@@ -1,0 +1,53 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+// Extra style for this section only; layout and title come from Section
+// 이 섹션에만 더하는 스타일, 레이아웃과 제목은 Section에서 처리
+.skills {
+  border-bottom: 1px solid $border-default;
+}
+
+// Page cols 3–8, split into 4 like the project area / 페이지 3–8열, 프로젝트 영역처럼 4등분
+.groups {
+  @include grid(4);
+  grid-column: 3 / -1;
+}
+
+// One row: group name in 1 part, skills in 3 parts / 한 줄: 분류 이름 1칸, 기술 3칸
+.group {
+  @include subgrid-row;
+  align-items: start;
+
+  dt {
+    @include cell;
+    grid-column: 1 / 2;
+    font-size: $font-size-md;
+    font-weight: 500;
+    color: $text-default;
+  }
+
+  dd {
+    @include cell;
+    grid-column: 2 / -1;
+  }
+}
+
+// Skills in one group, wrapping onto new lines as needed
+// 한 분류의 기술 목록, 칸이 좁으면 다음 줄로 넘어감
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+// One skill as a filled label / 기술 하나를 배경이 있는 라벨로
+.item {
+  padding: 2px 8px;
+  background: $bg-hover;
+  border-radius: 2px;
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  font-weight: 500;
+}

@@ -14,7 +14,7 @@
   @include cell;
   grid-column: 1 / 2;
 
-  h3 {
+  h4 {
     color: $text-default;
     font-size: $font-size-lg;
     font-weight: 600;
@@ -62,7 +62,7 @@
   border: 1px solid $text-disabled;
   border-radius: 99px;
   color: $text-disabled;
-  font-size: 10px;
+  font-size: $font-size-2xs;
   line-height: 1.6;
   font-weight: 700;
 }
@@ -85,7 +85,7 @@
     }
 
     &::before {
-      content: "·";
+      content: "·" / "";
       position: absolute;
       top: 0;
       left: 0;

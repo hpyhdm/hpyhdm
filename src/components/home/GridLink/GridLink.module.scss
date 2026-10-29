@@ -8,12 +8,11 @@
   width: 100%;
   height: 100%;
   color: $text-default;
-  font-size: 3rem; // 48px
-  letter-spacing: -3px;
+  font-size: $font-size-display-sm;
+  letter-spacing: $letter-spacing-display;
 
   @include media(false, tablet) {
     padding: 3px 6px;
-    font-size: 2.5rem;
     line-height: 1;
   }
 }

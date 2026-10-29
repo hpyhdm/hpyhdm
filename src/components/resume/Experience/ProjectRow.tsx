@@ -2,7 +2,7 @@ import { pick } from '@/lib/i18n';
 import type { Lang } from '@/lib/i18n';
 import { formatPeriods, formatTeamSize } from '@/data/resume/format';
 import type { Project } from '@/data/resume/types';
-import { MAINTAINING_LABEL } from './career.utils';
+import { MAINTAINING_LABEL } from './experience.utils';
 import styles from './ProjectRow.module.scss';
 
 type Props = Readonly<{
@@ -18,7 +18,7 @@ export default function ProjectRow({ project, lang }: Props) {
   return (
     <li className={styles.row}>
       <div className={styles.meta}>
-        <h3>
+        <h4>
           {project.url ? (
             <a href={t(project.url)} target="_blank" rel="noopener noreferrer">
               {t(project.name)}
@@ -26,7 +26,7 @@ export default function ProjectRow({ project, lang }: Props) {
           ) : (
             t(project.name)
           )}
-        </h3>
+        </h4>
         {/* Build periods, with the badge beside the first line / 구축 기간, 배지는 첫 줄 옆에 */}
         <div className={styles.dates}>
           {formatPeriods(lang)(project.periods).map((period) => (

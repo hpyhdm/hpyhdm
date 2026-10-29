@@ -1,4 +1,4 @@
-// Career helpers: display labels and pure functions for the career section
+// Experience helpers: display labels and pure functions for the experience section
 // 경력 섹션용 헬퍼: 화면 라벨과 순수 함수들
 
 import type { Localized, Project, ProjectKind } from '@/data/resume/types';

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { parseLang } from '@/lib/i18n';
 import { PROFILE } from '@/data/resume/profile';
-import { CAREERS } from '@/data/resume/careers';
-import { sortCareers } from '@/data/resume/sort';
+import { EXPERIENCE } from '@/data/resume/experience';
+import { sortExperience } from '@/data/resume/sort';
 import HoverGrid from '@/components/shared/HoverGrid/HoverGrid';
-import CompanyBlock from '@/components/resume/Career/CompanyBlock';
 import Profile from '@/components/resume/Profile/Profile';
+import Skills from '@/components/resume/Skills/Skills';
+import Experience from '@/components/resume/Experience/Experience';
 import styles from './page.module.scss';
 
 // Whole body depends on ?lang, so there is no static shell to show first
@@ -14,7 +15,7 @@ export const instant = false;
 
 // Sorted once at module level; the data never changes at runtime
 // 데이터가 런타임에 바뀌지 않으니 모듈에서 한 번만 정렬
-const SORTED_CAREERS = sortCareers(CAREERS);
+const SORTED_EXPERIENCE = sortExperience(EXPERIENCE);
 
 export default async function Page(props: PageProps<'/resume'>) {
   const lang = parseLang((await props.searchParams).lang);
@@ -32,12 +33,9 @@ export default async function Page(props: PageProps<'/resume'>) {
 
       <Profile profile={PROFILE} lang={lang} />
 
-      <div className={styles.career}>
-        {/* Career: one block per company, newest first / 경력: 회사별 블록, 최신순 */}
-        {SORTED_CAREERS.map((company) => (
-          <CompanyBlock key={company.id} company={company} lang={lang}/>
-        ))}
-      </div>
+      <Skills skills={PROFILE.skills} />
+
+      <Experience experience={SORTED_EXPERIENCE} lang={lang} />
     </main>
   );
 }

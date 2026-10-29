@@ -27,7 +27,7 @@
     aspect-ratio: 1 / 1;
     border-right: 1px solid $border-default;
     border-bottom: 1px solid $border-default;
-    font-size: 16px;
+    font-size: $font-size-base;
 
     &[aria-current] {
       background-color: var(--hover-fill);
@@ -50,8 +50,4 @@
       aspect-ratio: auto;
     }
   }
-}
-
-.career {
-  @include subgrid-row;
 }

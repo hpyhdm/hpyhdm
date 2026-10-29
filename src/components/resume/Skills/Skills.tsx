@@ -10,7 +10,7 @@ type Props = Readonly<{
 // 기술 섹션: 제목 줄, 그 아래 분류별 기술
 export default function Skills({ skills }: Props) {
   return (
-    <Section id="skills" title="Skills" className={styles.skills}>
+    <Section id="skills" title="Skills">
       <dl className={styles.groups} lang="en">
         {skills.map((group) => (
           <div key={group.label} className={styles.group}>

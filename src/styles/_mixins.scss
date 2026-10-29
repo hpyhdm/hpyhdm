@@ -58,3 +58,11 @@ $breakpoints: (
     padding: $cell-padding-mobile;
   }
 }
+
+// Grey bar behind a heading (section titles, group labels)
+// 제목 뒤에 깔리는 회색 바 (섹션 제목, 그룹 소제목)
+@mixin label-bar {
+  padding: 2px 8px;
+  background: $bg-hover-subtle;
+  border-top: 1px solid $border-default;
+}

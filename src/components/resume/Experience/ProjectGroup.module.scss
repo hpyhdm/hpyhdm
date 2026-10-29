@@ -11,13 +11,11 @@
   grid-column: 1 / -1;
 
   span {
+    @include label-bar;
     display: block;
-    padding: 2px 4px;
-    background: $bg-hover-subtle;
-    border-top: 1px solid $border-default;
     font-size: $font-size-sm;
     font-weight: 700;
-    color: $text-secondary; // 4.5:1 or more on the grey label background / 회색 라벨 배경 위에서 4.5:1 이상
+    color: $text-label;
   }
 }
 

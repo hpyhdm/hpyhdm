@@ -7,6 +7,7 @@ import HoverGrid from '@/components/shared/HoverGrid/HoverGrid';
 import Profile from '@/components/resume/Profile/Profile';
 import Skills from '@/components/resume/Skills/Skills';
 import Experience from '@/components/resume/Experience/Experience';
+import Education from '@/components/resume/Education/Education';
 import styles from './page.module.scss';
 
 // Whole body depends on ?lang, so there is no static shell to show first
@@ -36,6 +37,8 @@ export default async function Page(props: PageProps<'/resume'>) {
       <Skills skills={PROFILE.skills} />
 
       <Experience experience={SORTED_EXPERIENCE} lang={lang} />
+
+      <Education education={PROFILE.education} lang={lang} />
     </main>
   );
 }

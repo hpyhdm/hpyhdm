@@ -59,10 +59,10 @@
   grid-column: 2;
   grid-row: 1;
   padding: 0 8px;
-  border: 1px solid $text-disabled;
+  border: 1px solid currentColor; // follows the text color / 글자색을 그대로 따라감
   border-radius: 99px;
-  color: $text-disabled;
-  font-size: $font-size-2xs;
+  color: $text-label; // 5:1 on the page background / 페이지 배경 위 대비 5:1
+  font-size: $font-size-xs; // same size as the dates / 기간과 같은 크기
   line-height: 1.6;
   font-weight: 700;
 }

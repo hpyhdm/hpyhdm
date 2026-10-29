@@ -20,4 +20,11 @@ export const PROFILE = {
     { label: 'Accessibility', items: ['WCAG 2.1', 'KWCAG 2.2'] },
     { label: 'Tools', items: ['Git', 'Figma'] },
   ],
+  education: [
+    {
+      school: { ko: '세종대학교', en: 'Sejong University' },
+      degree: { ko: '미술학사 (한국화 전공)', en: 'Bachelor of Fine Arts in Korean Painting' }, // as on the certificate / 졸업증명서 표기 그대로
+      period: { kind: 'range', from: '2015.03', to: '2020.02' },
+    },
+  ],
 } as const satisfies Profile;

@@ -55,6 +55,14 @@ export type SkillGroup = Readonly<{
   items: readonly string[];
 }>;
 
+// One school entry
+// 학력 하나
+export type Education = Readonly<{
+  school: Localized;
+  degree: Localized;
+  period: Period;               // 'YYYY.MM', same as experience / 경력과 같은 'YYYY.MM'
+}>;
+
 // Profile row at the top of the resume
 // 이력서 상단 프로필 행
 export type Profile = Readonly<{
@@ -63,4 +71,5 @@ export type Profile = Readonly<{
   motto: Localized;
   contacts: readonly Contact[];
   skills: readonly SkillGroup[];
+  education: readonly Education[];
 }>;

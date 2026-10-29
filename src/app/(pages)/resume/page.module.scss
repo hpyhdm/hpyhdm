@@ -26,7 +26,8 @@
     @include cell;
     aspect-ratio: 1 / 1;
     border-right: 1px solid $border-default;
-    border-bottom: 1px solid $border-default;
+    // no border-bottom: the Skills title bar draws this line on desktop
+    // 아래 선 없음: PC에서는 Skills 제목 바가 이 선을 그림
     font-size: $font-size-base;
 
     &[aria-current] {
@@ -48,6 +49,7 @@
   @include media(false, tablet) {
     a {
       aspect-ratio: auto;
+      border-bottom: 1px solid $border-default; // mobile: profile sits right below / 모바일: 바로 아래가 프로필이라 선 필요
     }
   }
 }

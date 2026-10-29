@@ -1,12 +1,6 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-// Extra style for this section only; layout and title come from Section
-// 이 섹션에만 더하는 스타일, 레이아웃과 제목은 Section에서 처리
-.skills {
-  border-bottom: 1px solid $border-default;
-}
-
 // Page cols 3–8, split into 4 like the project area / 페이지 3–8열, 프로젝트 영역처럼 4등분
 .groups {
   @include grid(4);

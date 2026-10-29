@@ -9,9 +9,9 @@
 // Section title on its own full-width row, shared by every resume section
 // 이력서 섹션 공통: 제목은 전체 폭 한 줄을 따로 차지
 .title {
-  @include cell;
+  @include label-bar;
   grid-column: 1 / -1;
-  border-bottom: 1px solid $border-default;
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   font-weight: 600; // same weight as the company name / 회사 이름과 같은 굵기
+  color: $text-label;
 }

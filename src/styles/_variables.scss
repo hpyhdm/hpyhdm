@@ -10,6 +10,7 @@ $gray-200: #e5e5e5;
 $gray-300: #d4d4d4;
 $gray-400: #a3a3a3;
 $gray-500: #737373;
+$gray-600: #6b6b6b;
 $gray-700: #404040;
 $gray-900: #101010;
 
@@ -28,6 +29,7 @@ $bg-hover-subtle: $gray-120; // lighter hover for sub pages / 서브 페이지�
 // Text
 $text-default: $gray-900;
 $text-secondary: $gray-700; // long body text / 긴 본문 텍스트
+$text-label: $gray-600; // section titles on the grey bar, 4.5:1 or more / 회색 바 위 섹션 제목, 대비 4.5:1 이상
 $text-muted: $gray-500;
 $text-disabled: $gray-400;
 $text-subtle: $gray-300; // header nav before hover / 호버 전 헤더 nav

@@ -18,7 +18,6 @@ export default function ProjectRow({ project, lang }: Props) {
   return (
     <li className={styles.row}>
       <div className={styles.meta}>
-        {/* TODO: focus tag, team size / 각도 태그, 팀 규모 */}
         <h3>
           {project.url ? (
             <a href={t(project.url)} target="_blank" rel="noopener noreferrer">
@@ -37,9 +36,12 @@ export default function ProjectRow({ project, lang }: Props) {
             <span className={styles.badge}>{t(MAINTAINING_LABEL)}</span>
           )}
         </div>
+        {/* Compare with undefined so a 0 never renders as text / 0이 글자로 찍히지 않도록 undefined와 비교 */}
+        {project.teamSize !== undefined && (
+          <span className={styles.team}>{formatTeamSize(lang)(project.teamSize)}</span>
+        )}
       </div>
       <ul className={styles.bullets} role="list">
-        {/* TODO: bullets / bullet 목록 */}
         {project.bullets.map((bullet) => (
           <li key={bullet.en}>{t(bullet)}</li>
         ))}

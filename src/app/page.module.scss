@@ -48,7 +48,9 @@ $grid-count: 4;
       border-right: 0;
     }
 
-    &:nth-last-child(-n + #{$grid-count} of .cell) {
+    $last-row-cells: ":nth-last-child(-n + #{$grid-count} of .cell)";
+
+    &#{$last-row-cells} {
       border-bottom: 0;
     }
   }

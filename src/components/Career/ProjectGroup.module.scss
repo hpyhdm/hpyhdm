@@ -8,16 +8,16 @@
 
 // Group heading / 그룹 소제목
 .label {
-  @include cell;
   grid-column: 1 / -1;
+
   span {
     display: block;
     padding: 2px 4px;
     background: $bg-hover-subtle;
     border-top: 1px solid $border-default;
-    font-size: 13px;
+    font-size: $font-size-sm;
     font-weight: 700;
-    color: $text-disabled;
+    color: $text-secondary; // 4.5:1 or more on the grey label background / 회색 라벨 배경 위에서 4.5:1 이상
   }
 }
 

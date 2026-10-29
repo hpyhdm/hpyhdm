@@ -20,9 +20,15 @@ export const formatPeriods =
     (periods: readonly Period[]): readonly string[] =>
       periods.map(formatPeriod(lang));
 
-// Team size as display text: 'Team of 2', '2인 팀'
-// 팀 규모를 화면용 글자로: 'Team of 2', '2인 팀'
+// Label used when one person handles the whole project
+// 혼자 맡은 프로젝트에 쓰는 라벨
+const SOLO = { ko: '단독 담당', en: 'Solo' } as const;
+
+// Team size as display text: 'Team of 2', '2인 팀', 'Solo'
+// 팀 규모를 화면용 글자로: 'Team of 2', '2인 팀', '단독 담당'
 export const formatTeamSize =
   (lang: Lang) =>
     (size: number): string =>
-      lang === 'ko' ? `${size}인 팀` : `Team of ${size}`;
+      size === 1
+        ? pick(lang)(SOLO)
+        : lang === 'ko' ? `${size}인 팀` : `Team of ${size}`;

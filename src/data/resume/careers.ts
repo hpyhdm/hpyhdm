@@ -8,8 +8,6 @@ export const CAREERS = [
     id: 'uber-creative',
     name: { ko: '더위버크리에이티브', en: 'The Uber Creative' },
     role: 'Frontend Developer',
-    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
-    employment: 'full-time',
     period: { kind: 'range', from: '2023.09', to: null }, // still working here / 재직 중
     brief: {
       ko: '기업 웹사이트를 구축하고 운영하는 디지털 에이전시로, 신규 구축과 리뉴얼, 장기 운영을 함께 맡고 있습니다.',
@@ -22,7 +20,6 @@ export const CAREERS = [
         name: { ko: '이스틸포유 기업 홈페이지 리뉴얼', en: 'Esteel4U Corporate Website Renewal' },
         url: { ko: 'https://home.esteel4u.com/', en: 'https://home.esteel4u.com/' }, // no English site / 영문 사이트 없음
         periods: [{ kind: 'range', from: '2026.07', to: '2026.09' }],
-        focus: { ko: '관리자 직접 수정', en: 'Admin-editable' },
         teamSize: 2,
         bullets: [
           {
@@ -41,7 +38,6 @@ export const CAREERS = [
         name: { ko: 'DB그룹 CI 아카이브 개편', en: 'DB Group CI Archive Renewal' },
         url: { ko: 'https://ci.dbgroup.co.kr/', en: 'https://ci.dbgroup.co.kr/' }, // no English site / 영문 사이트 없음
         periods: [{ kind: 'range', from: '2025.10', to: '2025.12' }],
-        focus: { ko: '자동화', en: 'Automation' },
         teamSize: 2,
         bullets: [
           {
@@ -65,12 +61,11 @@ export const CAREERS = [
         url: { ko: 'https://dbhitek.com/', en: 'https://dbhitek.com/en' },
         periods: [{ kind: 'range', from: '2025.03', to: '2025.06' }],
         maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
-        focus: { ko: '다국어 대응', en: 'Localization' },
         teamSize: 2,
         bullets: [
           {
-            ko: '국·영·중·일 4개 언어 대응, 언어별 텍스트 길이 차이로 생기는 레이아웃 깨짐을 보정하고 중·일문 환경에 맞는 기본 폰트 적용',
-            en: 'Localized for KR/EN/CN/JP, fixing layout breaks caused by text-length differences and applying default fonts suited to Chinese and Japanese environments',
+            ko: '국·영·중·일 4개 언어 버전을 제작하며, 언어별 텍스트 길이 차이로 생기는 레이아웃 깨짐을 보정하고 중·일문 환경에 맞는 기본 폰트 적용',
+            en: 'Built the KR/EN/CN/JP versions, fixing layout breaks caused by text-length differences and applying default fonts suited to Chinese and Japanese environments',
           },
           {
             ko: '회사소개·기술·고객지원·IR·지속가능경영 카테고리 서브 페이지 20개 개발, 기존 컴포넌트 구조에 맞춰 반복 레이아웃을 공통 컴포넌트로 추가 작성',
@@ -89,7 +84,6 @@ export const CAREERS = [
         url: { ko: 'https://www.daesangwellife.com/', en: 'https://www.daesangwellife.com/en' },
         periods: [{ kind: 'range', from: '2024.12', to: '2025.05' }],
         maintaining: true, // still maintained after launch / 오픈 후 유지운영 중
-        focus: { ko: '스타일가이드 코드화', en: 'Style guide' },
         teamSize: 3,
         bullets: [
           {
@@ -119,7 +113,6 @@ export const CAREERS = [
           { kind: 'range', from: '2023.09', to: '2023.12' },
           { kind: 'range', from: '2025.03', to: '2025.04' },
         ],
-        focus: { ko: '사명 변경 리뉴얼', en: 'Rebrand' },
         bullets: [
           {
             ko: '입사 직후 진행 중인 구축 프로젝트에 합류(3인), 기존 공통 컴포넌트 구조를 파악해 제품·유지보수 페이지 개발',
@@ -141,7 +134,6 @@ export const CAREERS = [
         name: { ko: '삼양그룹 전사 CI 변경', en: 'Samyang Group CI Renewal' },
         url: { ko: 'https://www.samyang.com/', en: 'https://www.samyang.com/en' },
         periods: [{ kind: 'range', from: '2024.07', to: '2024.10' }],
-        focus: { ko: '12개 사이트', en: 'Multi-site' },
         teamSize: 3,
         bullets: [
           {
@@ -164,7 +156,6 @@ export const CAREERS = [
         name: { ko: '하나투어 기업 웹사이트', en: 'Hanatour Corporate Website' },
         url: { ko: 'https://www.hanatourcompany.com/', en: 'https://www.hanatourcompany.com/en' },
         periods: [{ kind: 'range', from: '2024.04', to: '2024.07' }],
-        focus: { ko: '스크롤 슬라이드', en: 'Scroll slider' },
         teamSize: 3,
         bullets: [
           {
@@ -183,7 +174,6 @@ export const CAREERS = [
         name: { ko: '삼익THK 통합 사이트 리뉴얼', en: 'Samick THK Integrated Site Renewal' },
         url: { ko: 'https://www.samickthk.co.kr/', en: 'https://www.samickthk.co.kr/en' },
         periods: [{ kind: 'range', from: '2023.12', to: '2024.05' }],
-        focus: { ko: '타임라인 인터랙션', en: 'Timeline' },
         teamSize: 4,
         bullets: [
           {
@@ -202,7 +192,7 @@ export const CAREERS = [
         name: { ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations' },
         url: { ko: 'https://www.samsungsem.com/kr/index.do', en: 'https://www.samsungsem.com/global/index.do' },
         periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
-        focus: { ko: '웹접근성 인증', en: 'Accessibility' },
+        teamSize: 3,
         bullets: [
           {
             ko: '매년 WCAG 2.1 AA 기준 웹접근성 인증을 갱신하며, 추가·수정되는 페이지를 접근성 마크업 기준에 맞춰 작성',
@@ -236,6 +226,7 @@ export const CAREERS = [
         name: { ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations' },
         url: { ko: 'https://samyangspecialty.com/', en: 'https://samyangspecialty.com/en' },
         periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
+        teamSize: 1,
         bullets: [
           {
             ko: '매년 전시회 페이지 제작, 신규 페이지 추가 및 콘텐츠 업데이트',
@@ -251,12 +242,10 @@ export const CAREERS = [
     id: 'freelance',
     name: { ko: '프리랜서', en: 'Freelance' },
     role: 'Frontend Developer',
-    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
-    employment: 'freelance',
     period: { kind: 'range', from: '2024.04', to: '2025.08' },
     brief: {
-      ko: '삼성 VXT CMS 프로젝트에 프리랜서로 세 차례 참여해, 개발팀이 실제 개발 전에 참고하는 React 기반 UI 화면과 재사용 컴포넌트를 개발했습니다.',
-      en: 'Joined Samsung\'s VXT CMS project three times as a freelancer, building React-based reference UI and reusable components for the development team ahead of production.',
+      ko: '삼성 VXT CMS 프로젝트에 프리랜서로 세 차례 참여했습니다.',
+      en: 'Contract frontend work on Samsung\'s VXT CMS, across three engagements.',
     },
     projects: [
       {
@@ -268,7 +257,6 @@ export const CAREERS = [
           { kind: 'range', from: '2024.10', to: '2024.11' },
           { kind: 'range', from: '2025.06', to: '2025.08' },
         ],
-        focus: { ko: 'React UI', en: 'React' },
         bullets: [
           {
             ko: '디자인 시안을 React로 실제 화면화해, 개발팀이 본 개발 전에 UI/UX를 확인하는 기준 화면 제작',
@@ -288,8 +276,6 @@ export const CAREERS = [
     id: 'wever-cns',
     name: { ko: '웨버CNS', en: 'Wever CNS' },
     role: 'UI Developer', // was 웹 퍼블리셔; 'publisher' reads as content owner in English / 이전 웹 퍼블리셔, 영어권에서 publisher는 콘텐츠 발행자로 읽힘
-    location: { ko: '대한민국 서울', en: 'Seoul, South Korea' },
-    employment: 'full-time',
     period: { kind: 'range', from: '2021.12', to: '2023.02' },
     brief: {
       ko: '정부기관과 기업 웹사이트를 구축하는 에이전시로, 대규모 공공 프로젝트와 기업 홈페이지 구축에 참여했습니다.',

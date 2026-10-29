@@ -33,8 +33,6 @@
 
 }
 
-// Periods stack in the first column; the badge sits in the second column of the first line
-// 기간은 첫 번째 열에 쌓이고, 배지는 첫 줄의 두 번째 열에 위치
 .dates {
   display: grid;
   grid-template-columns: auto auto;
@@ -49,8 +47,14 @@
   font-size: $font-size-xs;
 }
 
-// Outlined, so it never competes with the filled focus tag
-// 테두리만 있는 배지라 배경색이 있는 각도 태그와 겹쳐 보이지 않음
+// Team size under the dates, same tone as the dates / 기간 아래 팀 규모, 기간과 같은 톤
+.team {
+  display: block;
+  margin-top: 2px;
+  color: $text-muted;
+  font-size: $font-size-xs;
+}
+
 .badge {
   grid-column: 2;
   grid-row: 1;

@@ -11,4 +11,13 @@ export const PROFILE = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
     { label: 'Github', href: 'https://github.com/hpyhdm' },
   ],
+  // Grouped so small libraries read as support for the main tools
+  // 작은 라이브러리가 주요 기술을 보조하는 것으로 읽히도록 분류해서 표시
+  skills: [
+    { label: 'Languages', items: ['HTML', 'CSS/SCSS', 'JavaScript', 'TypeScript'] },
+    { label: 'Frameworks & Libraries', items: ['React', 'Next.js', 'jQuery'] },
+    { label: 'Interaction', items: ['GSAP', 'ScrollTrigger', 'Swiper', 'Lottie'] },
+    { label: 'Accessibility', items: ['WCAG 2.1 AA'] },
+    { label: 'Tools', items: ['Git', 'Figma'] },
+  ],
 } as const satisfies Profile;

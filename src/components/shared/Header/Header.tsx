@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getNavItems, getPageTitle } from './header.utils';
 import styles from './Header.module.scss';
-import HoverGrid from '@/components/HoverGrid/HoverGrid';
+import HoverGrid from '@/components/shared/HoverGrid/HoverGrid';
 
 // Shared header: current page title on the left, links to the other pages on the right
 // Client Component because usePathname only works on the client

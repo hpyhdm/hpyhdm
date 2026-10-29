@@ -1,5 +1,5 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 // Header box: fixed height so HoverGrid (height: 100%) has something to fill
 // 헤더 박스: HoverGrid(height: 100%)가 채울 수 있도록 높이 고정

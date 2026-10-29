@@ -5,7 +5,7 @@ import localFont from 'next/font/local';
 // import { Sniglet } from 'next/font/google';
 import '../styles/globals.scss';
 import styles from './layout.module.scss';
-import Footer from '@/components/Footer/Footer';
+import Footer from '@/components/shared/Footer/Footer';
 
 // Browser tab title for every page / 모든 페이지의 브라우저 탭 제목
 export const metadata: Metadata = {

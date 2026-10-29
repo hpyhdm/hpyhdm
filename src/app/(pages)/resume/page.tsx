@@ -3,9 +3,9 @@ import { parseLang } from '@/lib/i18n';
 import { PROFILE } from '@/data/resume/profile';
 import { CAREERS } from '@/data/resume/careers';
 import { sortCareers } from '@/data/resume/sort';
-import HoverGrid from '@/components/HoverGrid/HoverGrid';
-import CompanyBlock from '@/components/Career/CompanyBlock';
-import Profile from '@/components/Profile/Profile';
+import HoverGrid from '@/components/shared/HoverGrid/HoverGrid';
+import CompanyBlock from '@/components/resume/Career/CompanyBlock';
+import Profile from '@/components/resume/Profile/Profile';
 import styles from './page.module.scss';
 
 // Whole body depends on ?lang, so there is no static shell to show first

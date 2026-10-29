@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import Header from '@/components/Header/Header';
+import Header from '@/components/shared/Header/Header';
 import styles from './layout.module.scss';
 
 type Props = Readonly<{

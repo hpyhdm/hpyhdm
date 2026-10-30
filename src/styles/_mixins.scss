@@ -62,7 +62,13 @@ $breakpoints: (
 // Grey bar behind a heading (section titles, group labels)
 // 제목 뒤에 깔리는 회색 바 (섹션 제목, 그룹 소제목)
 @mixin label-bar {
-  padding: 4px $cell-padding-x;
+  padding: 2px $cell-padding-x; // sides match the cell / 좌우는 칸 여백과 같게
   background: $bg-hover-subtle;
   border-top: 1px solid $border-default;
+
+  // Match the cell's mobile side padding so text lines up
+  // 모바일에서도 칸 좌우 여백과 맞춰 글자 시작선 통일
+  @include media(false, tablet) {
+    padding-inline: $cell-padding-mobile;
+  }
 }

@@ -21,3 +21,10 @@ body {
   background: $bg-muted;
   color: $text-default;
 }
+
+// Same focus ring in every browser, only for keyboard focus
+// 브라우저와 상관없이 같은 포커스 링, 키보드로 이동할 때만 표시
+:focus-visible {
+  outline: 2px solid $text-default;
+  outline-offset: 2px;
+}

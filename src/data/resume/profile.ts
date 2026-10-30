@@ -8,7 +8,7 @@ export const PROFILE = {
   motto: { ko: '뜻이 있는 곳에 길이 있다.', en: 'Where there is a will, there is a way.' },
   contacts: [
     { label: 'hpyhdm@gmail.com', href: 'mailto:hpyhdm@gmail.com' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hpyhdm/' },
     { label: 'Github', href: 'https://github.com/hpyhdm' },
   ],
   // Grouped so small libraries read as support for the main tools

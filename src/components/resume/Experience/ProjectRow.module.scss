@@ -31,6 +31,9 @@
     }
   }
 
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
+  }
 }
 
 .dates {
@@ -62,7 +65,7 @@
   border: 1px solid currentColor; // follows the text color / 글자색을 그대로 따라감
   border-radius: 99px;
   color: $text-label; // 5:1 on the page background / 페이지 배경 위 대비 5:1
-  font-size: $font-size-xs; // same size as the dates / 기간과 같은 크기
+  font-size: $font-size-2xs; // 10px, smaller than the dates / 10px, 기간보다 작게
   line-height: 1.6;
   font-weight: 700;
 }
@@ -76,8 +79,7 @@
     max-width: $text-max-width;
     padding-left: 12px;
     font-size: $font-size-sm;
-    font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
     color: $text-secondary;
 
     & + li {
@@ -90,5 +92,9 @@
       top: 0;
       left: 0;
     }
+  }
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
   }
 }

@@ -189,7 +189,7 @@ export const EXPERIENCE = [
       {
         id: 'samsung-em',
         kind: 'operations',
-        name: { ko: '삼성전기 홈페이지 운영', en: 'Samsung Electro-Mechanics Website Operations' },
+        name: { ko: '삼성전기', en: 'Samsung Electro-Mechanics' },
         url: { ko: 'https://www.samsungsem.com/kr/index.do', en: 'https://www.samsungsem.com/global/index.do' },
         periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
         teamSize: 3,
@@ -223,7 +223,7 @@ export const EXPERIENCE = [
       {
         id: 'samyang-specialty',
         kind: 'operations',
-        name: { ko: '삼양 스페셜티 사이트 운영', en: 'Samyang Specialty Site Operations' },
+        name: { ko: '삼양 스페셜티', en: 'Samyang Specialty' },
         url: { ko: 'https://samyangspecialty.com/', en: 'https://samyangspecialty.com/en' },
         periods: [{ kind: 'range', from: '2023.09', to: null }], // since joining / 입사 때부터
         teamSize: 1,

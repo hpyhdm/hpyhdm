@@ -34,15 +34,17 @@
       background-color: var(--hover-fill);
       font-weight: 700;
     }
-
-    @include media($from: tablet) {
-      padding: $cell-padding-x;
-    }
   }
 
   @media (hover: hover) {
     &:hover a[aria-current] {
       background-color: transparent;
+    }
+  }
+
+  @include media($from: tablet) {
+    a {
+      padding: $cell-padding-x;
     }
   }
 

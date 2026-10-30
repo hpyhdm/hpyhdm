@@ -5,24 +5,44 @@
 .groups {
   @include grid(4);
   grid-column: 3 / -1;
+
+  // Mobile: full width, still 4 parts, so two groups per row like desktop
+  // 모바일: 전체 폭, 4등분은 그대로라 PC처럼 한 줄에 두 개씩
+  @include media(false, tablet) {
+    grid-column: 1 / -1;
+  }
 }
 
-// One row: group name in 1 part, skills in 3 parts / 한 줄: 분류 이름 1칸, 기술 3칸
+// One group takes 2 parts: two per row on desktop and mobile (1 2 / 3 4 / 5)
+// Name on top, skills below, same label-over-value pattern as the profile
+// 분류 하나가 2칸: PC·모바일 모두 한 줄에 두 개 (1 2 / 3 4 / 5)
+// 이름 위, 기술 아래로 프로필과 같은 '라벨 위, 값 아래' 구조
 .group {
-  @include subgrid-row;
-  align-items: start;
+  grid-column: span 2;
 
   dt {
     @include cell;
-    grid-column: 1 / 2;
-    font-size: $font-size-md;
-    font-weight: 500;
-    color: $text-default;
+    padding-bottom: 0;
+    margin-bottom: 8px;
+
+    span {
+      display: block;
+      width: fit-content;
+      position: relative;
+      font-size: $font-size-md;
+      font-weight: 500;
+      color: $text-muted;
+
+      &::after {
+        content: '/';
+        padding-left: 4px;
+      }
+    }
   }
 
   dd {
     @include cell;
-    grid-column: 2 / -1;
+    padding-top: 0; // sits right under the name / 이름 바로 아래에 붙도록
   }
 }
 

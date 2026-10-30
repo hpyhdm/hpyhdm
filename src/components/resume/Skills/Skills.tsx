@@ -14,7 +14,9 @@ export default function Skills({ skills }: Props) {
       <dl className={styles.groups} lang="en">
         {skills.map((group) => (
           <div key={group.label} className={styles.group}>
-            <dt>{group.label}</dt>
+            <dt>
+              <span>{group.label}</span>
+            </dt>
             <dd>
               <ul className={styles.items} role="list">
                 {group.items.map((item) => (

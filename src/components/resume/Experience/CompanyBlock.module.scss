@@ -19,12 +19,20 @@
     font-size: $font-size-xl;
     font-weight: 600;
   }
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
+  }
 }
 
 .sticky {
   @include cell;
   position: sticky;
   top: 0;
+
+  @include media(false, tablet) {
+    position: static; // no sticky when stacked / 위아래로 쌓일 때는 고정하지 않음
+  }
 }
 
 .role,
@@ -48,6 +56,10 @@
 .body {
   @include grid(4);
   grid-column: 3 / -1;
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
+  }
 }
 
 .brief {
@@ -55,5 +67,4 @@
   grid-column: 1 / -1;
   color: $text-secondary;
   font-size: $font-size-md;
-  font-weight: 500;
 }

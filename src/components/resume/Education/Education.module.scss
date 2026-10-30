@@ -21,6 +21,10 @@
     font-size: $font-size-lg;
     font-weight: 600;
   }
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
+  }
 }
 
 .period {
@@ -35,5 +39,8 @@
   grid-column: 3 / -1;
   color: $text-secondary;
   font-size: $font-size-md;
-  font-weight: 500;
+
+  @include media(false, tablet) {
+    grid-column: 1 / -1; // mobile: stacked, full width / 모바일: 위아래로 쌓고 전체 폭
+  }
 }

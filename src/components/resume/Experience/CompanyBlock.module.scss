@@ -68,3 +68,9 @@
   color: $text-secondary;
   font-size: $font-size-md;
 }
+
+// Line under the brief when no group label follows; the label bar draws its own top line
+// 아래에 그룹 소제목이 없을 때만 brief 밑에 선, 소제목이 있으면 label-bar 윗선이 대신함
+.divided {
+  border-bottom: 1px solid $border-default;
+}

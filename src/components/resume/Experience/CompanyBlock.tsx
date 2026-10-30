@@ -30,7 +30,10 @@ export default function CompanyBlock({ company, lang }: Props) {
       </header>
       <div className={styles.body}>
         {company.brief && (
-          <p className={styles.brief}>{t(company.brief)}</p>
+          // Line only when no group label follows / 아래에 그룹 소제목이 없을 때만 선
+          <p className={hasOperations ? styles.brief : `${styles.brief} ${styles.divided}`}>
+            {t(company.brief)}
+          </p>
         )}
         <ProjectGroup
           projects={builds}
